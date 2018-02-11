@@ -21,6 +21,11 @@ Create the app:
  $ git clone https://github.com/azishexacrew/hackathon.samarindakota.go.id.git    
  $ cd hackathon.samarindakota.go.id
  ```
+ 
+ Create new brach for your team
+ ```html
+ $ git checkout -b name-team    
+ ```
 
 ## Tutorial
 

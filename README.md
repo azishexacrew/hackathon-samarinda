@@ -1,3 +1,4 @@
+<img src="https://hackathon.samarindakota.go.id/img/logo_home.png" align="right" />
 # Hackathon Samarinda
 
 Samarinda Hackathon is a digital business application development competition, covering e-waste, e-retribusi and e-parking, utilizing various APIs from Government of Samarinda City digital platforms which are provided by Kominfo Samarinda.

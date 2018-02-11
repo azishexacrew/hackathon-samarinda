@@ -18,7 +18,8 @@ The quickest way to usage with this repository to generate an application as sho
 
 Create the app:
  ```html
- $ git clone https://github.com/azishexacrew/hackathon.samarindakota.go.id.git     
+ $ git clone https://github.com/azishexacrew/hackathon.samarindakota.go.id.git    
+ $ cd hackathon.samarindakota.go.id
  ```
 
 ## Tutorial

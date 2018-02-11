@@ -1,4 +1,4 @@
-# github-markdown-css
+# Hackathon Samarinda Smart City
 
 > The minimal amount of CSS to replicate the GitHub Markdown style
 

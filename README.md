@@ -57,4 +57,4 @@ Run `npm run make` to update the CSS.
 
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+GPL © [Pemerintah Kota Samarinda](https://samarindakota.go.id)

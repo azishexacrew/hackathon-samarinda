@@ -6,7 +6,9 @@ Samarinda Hackathon is a digital business application development competition, c
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Usage
+The quickest way to usage with this repository to generate an application as shown below:
 
+Create the app:
 
 ## Tutorial
 

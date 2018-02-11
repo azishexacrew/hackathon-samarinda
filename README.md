@@ -7,6 +7,8 @@ These instructions will get you a copy of the project up and running on your loc
 ## Prerequisites
 What things you need to install the software
 * **Download Github For [OSX](http://git-scm.com/download/mac)**
+* **Download Github For [Windows](https://gitforwindows.org/)**
+* **Download Github For [Linux](http://git-scm.com/book/en/Getting-Started-Installing-Git)**
 
 ## Usage
 The quickest way to usage with this repository to generate an application as shown below:

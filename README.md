@@ -2,56 +2,13 @@
 
 Samarinda Hackathon is a digital business application development competition, covering e-waste, e-retribusi and e-parking, utilizing various APIs from Government of Samarinda City digital platforms which are provided by Kominfo Samarinda.
 
-## [Demo](http://sindresorhus.com/github-markdown-css)
-
-
-## Install
-
-Download [manually](https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css), from [CDNJS](https://cdnjs.com/libraries/github-markdown-css), or with npm:
-
-```
-$ npm install github-markdown-css
-```
-
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Usage
 
-Import the `github-markdown.css` file and add a `markdown-body` class to the container of your rendered Markdown and set a width for it. GitHub uses `980px` width and `45px` padding, and `15px` padding for mobile.
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="github-markdown.css">
-<style>
-	.markdown-body {
-		box-sizing: border-box;
-		min-width: 200px;
-		max-width: 980px;
-		margin: 0 auto;
-		padding: 45px;
-	}
-
-	@media (max-width: 767px) {
-		.markdown-body {
-			padding: 15px;
-		}
-	}
-</style>
-<article class="markdown-body">
-	<h1>Unicorns</h1>
-	<p>All the things</p>
-</article>
-```
-
-
-## How
-
-See [`generate-github-markdown-css`](https://github.com/sindresorhus/generate-github-markdown-css) for how it's generated and ability to generate your own.
-
-
-## Dev
-
-Run `npm run make` to update the CSS.
-
+## [Tutorial](http://hackathon.samarindakota.go.id)
 
 ## License
 

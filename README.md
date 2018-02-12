@@ -26,6 +26,18 @@ Create the app:
  ```html
  $ git checkout -b name-team    
  ```
+ 
+ Add working directory files
+  ```html
+ $ git add <filename> atau $ git add *
+ $ git commit -m "add index"
+ $ git push
+ ```
+ 
+ Update your local repository to the newest commit
+  ```html
+ $ git pull
+ ```
 
 ## Tutorials
 * **[Tutorial Samarinda Hackathon Using Github - Part 1](http://git-scm.com/download/mac)**

@@ -31,12 +31,12 @@ Create the app:
   ```html
  $ git add <filename> atau git add *
  $ git commit -m "add index"
- $ git push
+ $ git push origin name-team
  ```
  
  Update your local repository to the newest commit
   ```html
- $ git pull
+ $ git pull origin name-team
  ```
 
 ## Tutorials

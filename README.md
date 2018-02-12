@@ -41,7 +41,7 @@ Create the app:
 
 ## Tutorials
 * **[Tutorial Samarinda Hackathon Using Github - Part 1](https://www.youtube.com/watch?v=K7VErwgRclQ)**
-* **[Tutorial Samarinda Hackathon Using Samarinda Api - Part 2]()**
+* **[Tutorial Samarinda Hackathon Using Samarinda Api - Part 2](https://www.youtube.com/watch?v=7l1CE4Mudlw)**
 ## License
 
 GPL © [Pemerintah Kota Samarinda](https://samarindakota.go.id)

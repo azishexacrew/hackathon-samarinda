@@ -29,7 +29,7 @@ Create the app:
  
  Add working directory files
   ```html
- $ git add <filename> atau $ git add *
+ $ git add <filename> atau git add *
  $ git commit -m "add index"
  $ git push
  ```

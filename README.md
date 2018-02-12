@@ -40,8 +40,8 @@ Create the app:
  ```
 
 ## Tutorials
-* **[Tutorial Samarinda Hackathon Using Github - Part 1](http://git-scm.com/download/mac)**
-* **[Tutorial Samarinda Hackathon Using Samarinda Api - Part 2](https://gitforwindows.org/)**
+* **[Tutorial Samarinda Hackathon Using Github - Part 1](https://www.youtube.com/watch?v=K7VErwgRclQ&feature=youtu.be)**
+* **[Tutorial Samarinda Hackathon Using Samarinda Api - Part 2]()**
 ## License
 
 GPL © [Pemerintah Kota Samarinda](https://samarindakota.go.id)

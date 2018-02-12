@@ -27,8 +27,9 @@ Create the app:
  $ git checkout -b name-team    
  ```
 
-## Tutorial
-
+## Tutorials
+* **[Tutorial Hackathon Samarinda Using Github - Part 1](http://git-scm.com/download/mac)**
+* **[Tutorial Hackathon Samarinda Using Samarinda Api - Part 2](https://gitforwindows.org/)**
 ## License
 
 GPL © [Pemerintah Kota Samarinda](https://samarindakota.go.id)

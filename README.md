@@ -22,7 +22,7 @@ Create the app:
  $ cd hackathon.samarindakota.go.id
  ```
  
- Create new brach for your team
+ Create new branch for your team
  ```html
  $ git checkout -b name-team    
  ```

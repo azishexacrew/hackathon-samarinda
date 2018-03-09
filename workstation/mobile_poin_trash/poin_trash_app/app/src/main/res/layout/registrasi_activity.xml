@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.trash.poin.poin_trash.activity.Registrasi">
+
+     <!-- Login progress -->
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_above="@id/register_layout"
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fafcff"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="-2dp"
+                            android:layout_marginRight="-2dp"
+                            android:layout_marginTop="-1dp"
+                            android:background="@drawable/gradient_back" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="35dp"
+                            android:layout_marginTop="30dp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="180dp"
+                                    android:layout_height="180dp"
+                                    app:srcCompat="@drawable/logo_only" />
+
+                                 <TextView
+                                     android:layout_marginTop="-16dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_marginRight="30dp"
+                                    android:text="Daftarkan diri anda sebagai pengguna untuk dapat berinvestasi bersama kami."
+                                    android:textAlignment="center"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:layout_margin="32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Nomor Telephone"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/kontak"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:hint="Nomor Telephone"
+                                android:inputType="phone"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="#d7d7d7" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Nama Lengkap"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/nama"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:hint="Nama Lengkap"
+                                android:inputType="text"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="#d7d7d7" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Alamat Email"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:hint="Alamat Email"
+                                android:inputType="textEmailAddress"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#d7d7d7" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Alamat Tempat Tinggal"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/alamat_rumah"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:hint="Alamat Valid"
+                                android:inputType="text"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#d7d7d7" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Kata Sandi"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <com.xwray.passwordview.PasswordView
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:fontFamily="sans-serif"
+                                android:hint="Kata sandi"
+                                android:textSize="18sp"
+                                app:useStrikeThrough="true" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#d7d7d7" />
+
+                            <TextView
+                                android:id="@+id/error_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Password Kosong"
+                                android:textColor="#F63D2B"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Konfirmasi Kata Sandi"
+                                android:textColor="#292929"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <com.xwray.passwordview.PasswordView
+                                android:id="@+id/password_confirmation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#fafcff"
+                                android:fontFamily="sans-serif"
+                                android:hint="Ulangi kata sandi"
+                                android:textSize="18sp"
+                                app:useStrikeThrough="true" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#d7d7d7" />
+
+                            <TextView
+                                android:id="@+id/error_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Password Kosong"
+                                android:textColor="#F63D2B"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/email_sign_up_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="@drawable/button_background_very_low"
+                            android:text="Daftar sekarang"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/register_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#d6d6d6"/>
+
+            <LinearLayout
+                android:background="#f7f7f7"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah punya akun?"
+                    android:textSize="14sp"/>
+
+                <Button
+                    android:id="@+id/login_btn"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:text="LOGIN"
+                    android:background="#00ffffff"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

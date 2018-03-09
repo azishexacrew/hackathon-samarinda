@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f7fbff"
+    tools:context="com.trash.poin.poin_trash.fragment.DaftarBankSampahFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/list_bank_sampah"/>
+        <include layout="@layout/list_bank_sampah"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

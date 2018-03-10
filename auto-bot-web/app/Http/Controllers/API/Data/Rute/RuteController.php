@@ -16,10 +16,9 @@ class RuteController extends Controller
 
   public function index()
   {
-      $rute = Rute::with('user')->first();
+      $rute = Rute::with('user','rutedetail', 'rutedetail.tps', 'angkutan', 'rutetrack')->get();
 
-      //return $rute;
-      return rute::all();
+      return response()->json(['status' => 'done' , 'data' => $rute ]);
   }
 
   public function store(Request $request)

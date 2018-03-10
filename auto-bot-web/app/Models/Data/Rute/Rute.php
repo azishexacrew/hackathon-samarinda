@@ -17,4 +17,19 @@ class Rute extends Model
     {
         return $this->belongsTo('App\Models\User', 'users_id');
     }
+
+    public function Angkutan()
+    {
+        return $this->belongsTo('App\Models\Data\Angkutan', 'angkutans_id');
+    }
+
+    public function Rutedetail()
+    {
+        return $this->hasMany('App\Models\Data\Rute\Rutedetail', 'rutes_id', 'id');
+    }
+
+    public function Rutetrack()
+    {
+        return $this->hasOne('App\Models\Data\Rute\Rutetrack', 'rutes_id', 'id');
+    }
 }

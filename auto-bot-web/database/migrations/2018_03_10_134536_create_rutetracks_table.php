@@ -17,7 +17,7 @@ class CreateRutetracksTable extends Migration
             $table->uuid('id')->primary();
             $table->string('lat');
             $table->string('lng');
-            $table->string('rute_detail');
+            $table->string('rute_details');
             $table->timestamps();
         });
     }

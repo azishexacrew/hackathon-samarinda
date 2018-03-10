@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRutedetailsTable extends Migration
+class AlterTableRutes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateRutedetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rutedetails', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('rutes_id');
-            $table->string('tps_id');
-            $table->string('status');
-            $table->timestamps();
+        Schema::table('rutes', function (Blueprint $table) {
+            $table->string('angkutans_id')->after('nama');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateRutedetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rutedetails');
+        Schema::table('rutes', function (Blueprint $table) {
+            $table->dropColumn('angkutans_id');
+        });
     }
 }

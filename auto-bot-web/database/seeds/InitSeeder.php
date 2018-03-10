@@ -36,6 +36,16 @@ class InitSeeder extends Seeder
 
         $user->save();
         $this->profilCreate($user->id);
+
+        $user = new User;
+
+        $user->name = 'Muhammad Syawqi';
+        $user->email = 'syawqi@auto-bot.online';
+        $user->rule = 'personal';
+        $user->password = bcrypt('asdasd');
+
+        $user->save();
+        $this->profilCreate($user->id);
     }
 
     protected function profilCreate($id){

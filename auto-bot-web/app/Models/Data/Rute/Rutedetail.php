@@ -17,4 +17,9 @@ class Rutedetail extends Model
     {
         return $this->belongsTo('App\Models\Data\Rute\Rute', 'rute_id');
     }
+
+    public function Tps()
+    {
+        return $this->belongsTo('App\Models\Data\Tps', 'tps_id');
+    }
 }

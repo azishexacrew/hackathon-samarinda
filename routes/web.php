@@ -18,3 +18,7 @@ Route::get('profile','ProfileController@index');
 Route::get('provinsi','LandingController@provinsi');
 
 Route::get('tenant','TenantController@konfirmasi');
+
+Route::get('register',function(){
+	return view('register.index');
+});

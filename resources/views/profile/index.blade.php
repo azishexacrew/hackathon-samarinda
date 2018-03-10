@@ -5,7 +5,6 @@
 <div class="container-fluid">
 	<div class="row">
 		<form>
-
 		<div class="col-sm-offset-1 col-sm-3">
 			<div class="form-group">
 				<div class="panel panel-default text-right">

@@ -18,13 +18,17 @@
           <li class="active"><a href="{{asset('/')}}">Halalam Depan <span class="sr-only">(current)</span></a></li>
           <li><a href="#">Profil </a></li>
           <li><a href="#">Profil Tenant </a></li>
-          <li><a href="#">Pengaturan </a></li>
           <li><a href="#">Manage Tenant </a></li>
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-        <li><a href="{{route('registerr.index')}}">Register</a> </li>
+        @if (! Illuminate\Support\Facades\Auth::check())
+          <li><a href="#">Login</a></li>
+          <li><a href="{{route('registerr.index')}}">Register</a> </li>
+        @endif
+        @if (Illuminate\Support\Facades\Auth::check())
+          <li><a href="{{route('pengaturan.index')}}">Pengaturan</a></li>
+        @endif
       </ul>
     </div>
   </div>

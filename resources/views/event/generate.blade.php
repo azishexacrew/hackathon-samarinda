@@ -17,9 +17,8 @@
   	</div>
     <div class="row">
     	<div class="col-sm-4 col-sm-offset-4">
-    		<button class="col-sm-12 btn btn-success">
-    			<p class="h4">Selesai</p>
-			</button>
+    		{{-- <button class="col-sm-12 btn btn-success">Selesai</button> --}}
+        <a href="{{url('/')}}" class="btn btn-success btn-lg">Selesai</a>
     	</div>
   	</div>
     </div>

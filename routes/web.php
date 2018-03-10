@@ -13,9 +13,6 @@
 
 Route::get('/', 'LandingController@index')->name('landingpage');
 
-Route::get('kecamatan','KecamatanController@index');
-
-
 Route::get('tenant','TenantController@konfirmasi');
 
 
@@ -30,6 +27,8 @@ Route::get('personalisasi',function(){
 
 Route::resource('registerr','RegisterController');
 Route::resource('loginn','LoginController');
+
+Route::resource('pengaturan','PengaturanController');
 
 Auth::routes();
 

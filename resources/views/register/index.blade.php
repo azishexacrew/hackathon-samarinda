@@ -1,7 +1,7 @@
 @extends('_layouts.default-register')
 
 @section('tubuh')
-<div class="container-fluid" id="#body">
+<div class="container-fluid" id="body">
 		<div class="row">
 			<form action="{{route('registerr.store')}}" method="post">
 				{{ csrf_field() }}

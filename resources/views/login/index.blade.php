@@ -1,4 +1,4 @@
-@extends('_layouts.default-register')
+@extends('_layouts.default')
 
 @section('tubuh')
 <div class="container-fluid" id="#body">

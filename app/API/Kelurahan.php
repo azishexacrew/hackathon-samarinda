@@ -4,7 +4,7 @@ namespace App\API ;
 
 
 
-class Provinsi {
+class Kelurahan {
   public function index(){
     $curl = curl_init();
 

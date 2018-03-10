@@ -11,4 +11,5 @@ class Tps extends Model
     public $incrementing = false;
 
     protected $table = 'tps';
+    protected $fillable = ['address', 'kecamatan', 'kelurahan', 'lat', 'lng'];
 }

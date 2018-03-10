@@ -17,5 +17,6 @@ Route::get('profile','ProfileController@index');
 
 Route::get('provinsi','LandingController@provinsi');
 
-Route::get('tenant','TenantController@konfirmasi');
-//tes
+Route::get('tenant/konfirmasi','TenantController@konfirmasi');
+
+Route::resource('event','EventController');

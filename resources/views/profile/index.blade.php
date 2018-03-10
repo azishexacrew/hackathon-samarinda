@@ -4,12 +4,9 @@
 <div class="container text-center h3">Buat Tempat Event</div>
 <div class="container-fluid">
 	<div class="row">
-<<<<<<< HEAD
 		<form>
-=======
 		<form action="{{route('event.store')}}" method="post" enctype="multipart/form-data">
-			{{ csrf_field() }}
->>>>>>> b89736e720fd72ecd1d7ac8bc1700debcf9761ad
+
 		<div class="col-sm-offset-1 col-sm-3">
 			<div class="form-group">
 				<div class="panel panel-default text-right">

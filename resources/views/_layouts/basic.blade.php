@@ -17,5 +17,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{asset('js/tengger.js')}}"></script>
 <script src="{{asset('js/lightbox.js')}}"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   </body>
 </html>

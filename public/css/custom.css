@@ -22,3 +22,18 @@
 	border-width :3;
 	margin-top: 0px;
 }
+
+#user-icon{
+	margin-top: 70px;
+}
+
+.fa-check{
+	margin-right: 5px;
+	margin-left: -5px;
+}
+
+@media(max-width: 576px){
+	#user-icon{
+	margin-top: 0px;
+	}
+}

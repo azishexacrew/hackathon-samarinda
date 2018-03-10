@@ -9,13 +9,25 @@ use App\User ;
 class RegisterController extends Controller
 {
     public function index(){
+      if (!request('note')) {
+        session()->forget('note');
+      }
       return view('register.index');
     }
 
     public function store(){
       $user = new User;
 
-      $user->nama = request('nama');
+      $this->validate(request(),[
+        'name' => 'required',
+        'email' => 'required|email',
+        'username' => 'required',
+        'hp' => 'required|numeric',
+        'jenis_kelamin' => 'required',
+        'alamat' => 'required'
+      ]);
+
+      $user->nama = request('name');
       $user->password = bcrypt(request('password'));
       $user->email = request('email');
       $user->username= request('username');
@@ -25,11 +37,9 @@ class RegisterController extends Controller
       $user->save();
 
       if ($user) {
-        $note = 'registerasi telah berhasil';
-      }else{
-        $note = 'registerasi gagal';
+        session()->put('note','berhasil');
       }
 
-      return redirect()->route('registerr.index',['note' => $note]);
+      return redirect()->route('registerr.index',['note' => true]);
     }
 }

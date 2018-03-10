@@ -11,14 +11,17 @@
 			</div>
 			<div class="panel-body">
 				<div class="row">
-					<div class="alert alert-dismissible alert-danger col-sm-offset-3 col-sm-6">
-					  <button type="button" class="close" data-dismiss="alert">&times;</button>
-					  <strong>Pendaftaran Gagal
-					</div>
-					<div class="alert alert-dismissible alert-success col-sm-offset-3 col-sm-6">
-					  <button type="button" class="close" data-dismiss="alert">&times;</button>
-					  <strong>Pendaftaran Berhasil
-					</div>
+					@if ($errors->all())
+						<div class="alert alert-dismissible alert-danger col-sm-offset-3 col-sm-6">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>Pendaftaran Gagal
+						</div>
+					@elseif(session()->get('note') == 'berhasil')
+						<div class="alert alert-dismissible alert-success col-sm-offset-3 col-sm-6">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>Pendaftaran Berhasil
+						</div>
+					@endif
 				</div>
 
 				<div class="row">
@@ -40,7 +43,7 @@
 				</div>
 				<div class="form-group col-sm-offset-7 col-sm-5">
 					<label for="jk">Jenis Kelamin</label>
-					<select class="form-control">
+					<select class="form-control" name="jenis_kelamin">
 						<option value="pria">Pria</option>
 						<option value="wanita">Wanita</option>
 					</select>
@@ -49,7 +52,7 @@
 					<div class="col-sm-6">
 						<div class="form-group col-sm-5">
 							<label for="phone">Phone</label>
-							<input type="text" class="form-control" name="phone" required="">
+							<input type="text" class="form-control" name="hp" required="">
 						</div>
 						<div class="col-sm-8"></div>
 						<div class="form-group col-sm-5">

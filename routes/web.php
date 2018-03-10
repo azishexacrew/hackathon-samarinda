@@ -13,7 +13,7 @@
 
 Route::get('/', 'LandingController@index');
 
-Route::get('provinsi','LandingController@provinsi');
+Route::get('kecamatan','KecamatanController@index');
 
 
 Route::get('tenant','TenantController@konfirmasi');

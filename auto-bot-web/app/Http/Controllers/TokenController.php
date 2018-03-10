@@ -25,12 +25,13 @@ class TokenController extends Controller
                                 'errors' => $validator->errors()
                                     ], 422);
         }
+
         $token = JWTAuth::attempt($credentials);
 
-        $users = User::all();
+        $user = User::where( 'email', request()->email )->with('profil')->first();
 
-        if ($token ) {
-            return response()->json(['token' => $token, 'user' => $users]);
+        if ($token) {
+            return response()->json(['token' => $token, 'data' => $user]);
         } else {
             return response()->json(['code' => 2, 'message' => 'Invalid credentials.'], 401);
         }

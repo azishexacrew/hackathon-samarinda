@@ -53,11 +53,30 @@ class InitSeeder extends Seeder
 
     protected function tpsCreate(){
         Tps::create([
+            'nama' => 'TPS Danau Jempang',
             'address' => 'Jalan Danau Jempang',
             'kecamatan' => 'Samarinda Kota',
             'kelurahan' => 'Sungai Pinang Luar',
             'lat' => '-0.4948406',
             'lng' => '117.1539942 ',
+        ]);
+
+        Tps::create([
+            'nama' => 'TPS Lambung',
+            'address' => 'Jalan Lambung Mangkurat',
+            'kecamatan' => 'Samarinda Kota',
+            'kelurahan' => 'Sungai Pinang Luar',
+            'lat' => '-0.4892072',
+            'lng' => '117.1602504',
+        ]);
+
+        Tps::create([
+            'nama' => 'TPS Merdeka',
+            'address' => 'Jalan Merdeka',
+            'kecamatan' => 'Samarinda Kota',
+            'kelurahan' => 'Sungai Pinang Luar',
+            'lat' => '-0.4883649',
+            'lng' => '117.1643163',
         ]);
     }
 }

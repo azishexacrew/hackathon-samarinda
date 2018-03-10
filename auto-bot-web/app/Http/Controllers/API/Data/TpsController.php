@@ -16,7 +16,7 @@ class TpsController extends Controller
 
     public function index()
     {
-        return tps::all();
+        return Tps::paginate(15);
     }
 
     public function store(Request $request)

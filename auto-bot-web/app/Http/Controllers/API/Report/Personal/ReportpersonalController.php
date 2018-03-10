@@ -16,7 +16,7 @@ class ReportpersonalController extends Controller
 
     public function Index()
     {
-        return reportpersonal::all();
+        return reportpersonal::paginate(15);
     }
 
     public function store(Request $request)

@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use GuzzleHttp\Message\Response;
 use App\PemilikTenant;
+use App\Pemilik;
+use App\User;
+use Auth;
 
 class PemilikTenantController extends Controller
 {
   public function index()
   {
       $active = 'pemilik';
-      $tenant = PemilikTenant::orderBy('id','desc');
+      $user = Auth::user();
+      $selectPemilik = Pemilik::where('user_id',$user->id)->get();
+      $tenant = PemilikTenant::with('user')->where('user_id',$user->id)->orderBy('id','desc');
       $term = request('term');
       if($term){
           $term = '%' . $term . '%';
@@ -100,12 +105,13 @@ class PemilikTenantController extends Controller
           'harga' => 'required',
       ]);
 
+      $user = Auth::user();
       $tenant->area = request('area');
       $tenant->blok = request('blok');
       $tenant->nomor = request('nomor');
       $tenant->luas = request('luas');
       $tenant->harga = request('harga');
-      $tenant->pemilik_id = '8';
+      $tenant->user_id = $user->id;
       $tenant->harga = request('harga');
 
       $tenant->save();

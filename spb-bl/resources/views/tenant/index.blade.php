@@ -51,7 +51,7 @@
                                 <td>{{ $item->nomor }}</td>
                                 <td>{{ $item->luas }}</td>
                                 <td>{{ $item->harga }}</td>
-                                <td></td>
+                                <td>{{ $item->user->name }} </td>
                                 <td class="td-actions">
                                     <center>
                                         <a href="{{ route('webpemilik::tenant.edit',$item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"> </i></a>
@@ -61,7 +61,7 @@
                               </tr>
                           </tbody>
                           @empty
-                            <td colspan="7" class="text-center">DATA ORANG TIDAK DITEMUKAN</td>
+                            <td colspan="7" class="text-center">DATA TENANT TIDAK DITEMUKAN</td>
                           @endforelse
                       </table>
                       <div class="pull-right">

@@ -31,9 +31,7 @@ Route::group(['prefix'=>'pemilik','as' => 'webpemilik::','middleware' => ['auth'
 });
 
 Route::group(['prefix'=>'sitemanager','as' => 'web::','middleware' => ['auth','superadmin']], function(){
-  Route::get('/', function () {
-    return view('home');
-  });
+  Route::get('/', 'HomeController@index');
   Route::get('dashboard', function () {
     return view('home');
   });

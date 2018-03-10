@@ -9,4 +9,8 @@ class TenantController extends Controller
     public function konfirmasi (){
       return view('tenant.konfirmasi');
     }
+
+    public function store(){
+      
+    }
 }

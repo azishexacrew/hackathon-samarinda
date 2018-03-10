@@ -523,7 +523,7 @@
 			"file": "resources/views/profile/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 2678,
+				"buffer_size": 3041,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,7 +541,7 @@
 			"file": "routes/web.php",
 			"settings":
 			{
-				"buffer_size": 663,
+				"buffer_size": 841,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -923,7 +923,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -932,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2678,
+						"buffer_size": 3041,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2678,
-								2667
+								0,
+								0
 							]
 						],
 						"settings":
@@ -948,10 +948,10 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 797.0,
+						"translation.y": 195.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -979,7 +979,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -988,15 +988,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 663,
+						"buffer_size": 841,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								635,
-								635
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1007,7 +1007,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1094,7 +1094,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 266.0,
+	"side_bar_width": 531.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

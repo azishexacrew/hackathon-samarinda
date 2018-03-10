@@ -31,7 +31,7 @@ class RegisterController extends Controller
       $user->password = bcrypt(request('password'));
       $user->email = request('email');
       $user->username= request('username');
-      $user->hp = request('hp');
+      $user->hp = number_format(request('hp'));
       $user->jenis_kelamin = request('jenis_kelamin');
       $user->alamat = request('alamat');
       $user->save();

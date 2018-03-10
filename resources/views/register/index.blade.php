@@ -2,9 +2,6 @@
 
 @section('tubuh')
 <div class="container-fluid" id="#body">
-		<div class="row"> 
-			<form id="register-form">
-<div class="container-fluid">
 		<div class="row">
 			<form action="{{route('registerr.store')}}" method="post">
 				{{ csrf_field() }}
@@ -19,6 +16,7 @@
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>
 						  <strong>Pendaftaran Gagal
 						</div>
+
 					@elseif(session()->get('note') == 'berhasil')
 						<div class="alert alert-dismissible alert-success col-sm-offset-3 col-sm-6">
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>

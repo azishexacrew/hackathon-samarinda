@@ -22,8 +22,6 @@ class PenyewaTable extends Migration
              $table->string('tmpt_lahir');
              $table->date('tgl_lahir');
              $table->string('no_identitas');
-             $table->integer('user_id')->unsigned();
-             $table->foreign('user_id')->references('id')->on('users');
              $table->timestamps();
          });
      }

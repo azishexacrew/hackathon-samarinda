@@ -24,25 +24,18 @@
         <div class="row m-t-40">
 
             <p>
-              {{ $data->data[8]->nama }}
-             @foreach($data->data as $d)
-                <div>ID: {{ $d['id'] }}</div>
-                <div>Subject: {{ $d['nama'] }}</div>
-             @endforeach
+              {{-- {{ $data->data[8]->nama }} --}}
+             {{-- @foreach($data['data'] as $item)
+                <div class="col-md-12">
+                  <p>Subject: {{ $item['nama'] }}</p>
+                </div>
+             @endforeach --}}
+
+
             </p>
 
-            <div class="col-md-4 text-center">
-              <a href="">
-              <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                  <h1 class="card-title"><i class="fa fa-id-card"></i></h1>
-                  <h5 class="card-title">Biodata</h5>
-                </div>
-              </div>
-            </a>
-            </div>
 
-            <div class="col-md-4 text-center">
+            <div class="col-md-6 text-center">
               <a href="">
               <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
                 <div class="card-body">
@@ -53,7 +46,7 @@
             </a>
             </div>
 
-          <div class="col-md-4 text-center">
+          <div class="col-md-6 text-center">
             <a href="">
               <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
                 <div class="card-body">

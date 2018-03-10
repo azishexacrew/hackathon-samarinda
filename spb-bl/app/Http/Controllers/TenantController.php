@@ -22,8 +22,17 @@ class TenantController extends Controller
      )->getBody();
 
      $contents = (string) $response;
-     $data = json_decode($contents);
+     $data = json_decode($contents, true);
+
+     // $data = array_filter($data);
+
+     // $data = collect($data)->where("nama","LIKE","%{$request->term}%")->all();
+     // $data = collect($data)->filter(function ($item) use ($request) {
+     //     return $item->nama == $request->texto;
+     //  });
+     // $data = collect($data)->where("title","LIKE","%{$request->texto}%")->all();
      // dd($data);
+     // var_dump($data);
      // return response()->json($data);
 
      // $user = User::where('level','member');

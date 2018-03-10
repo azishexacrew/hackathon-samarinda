@@ -38,7 +38,8 @@
                               <th>Akhir Sewa</th>
                               <th>Lama Sewa</th>
                               <th>Pemilik</th>
-                              <th>Penyewa Tenant</th>
+                              <th>Penyewa</th>
+                              <th>Tenant</th>
                               <th align="td-actions"> </th>
                             </tr>
                           </thead>
@@ -50,9 +51,9 @@
                                 <td>{{ $item->awal }}</td>
                                 <td>{{ $item->akhir }}</td>
                                 <td>{{ $item->lama }} Hari</td>
-                                <td>{{ $item->lama }} Hari</td>
-                                <td>{{ $item->lama }} Hari</td>
-                                <td>{{ $item->lama }} Hari</td>
+                                <td>{{ $item->pemilik->name }}</td>
+                                <td>{{ $item->penyewa->nama }}</td>
+                                <td>{{ $item->tenant->area }}</td>
                                 <td class="td-actions">
                                     <center>
                                         <a href="{{ route('webpemilik::sewa.edit',$item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"> </i></a>
@@ -62,7 +63,7 @@
                               </tr>
                           </tbody>
                           @empty
-                            <td colspan="7" class="text-center">DATA SEWA TIDAK DITEMUKAN</td>
+                            <td colspan="9" class="text-center">DATA SEWA TIDAK DITEMUKAN</td>
                           @endforelse
                       </table>
                       <div class="pull-right">

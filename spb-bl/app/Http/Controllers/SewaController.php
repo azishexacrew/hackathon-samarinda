@@ -15,11 +15,12 @@ class SewaController extends Controller
   public function index()
   {
       $active = 'pemilik';
-      $sewa = Sewa::orderBy('id','desc');
+      $user = Auth::user();
+      $sewa = Sewa::with('pemilik','tenant','penyewa')->where('pemilik_id',$user->id)->orderBy('id','desc');
       $term = request('term');
       if($term){
           $term = '%' . $term . '%';
-          $sewa->where('nama','LIKE',$term)->orwhere('no_identitas','LIKE',$term);
+          $sewa->where('kode','LIKE',$term);
       }
       $sewa = $sewa->paginate(20);
       return view('sewa.index', compact('sewa'));

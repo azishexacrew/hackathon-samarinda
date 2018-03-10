@@ -22,9 +22,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 Route::group(['prefix'=>'pemilik','as' => 'webpemilik::','middleware' => ['auth','pemilik']], function(){
-  Route::get('/', function () {
-      return view('home');
-  });
+  Route::get('/', 'HomeController@index');
   Route::resource('tenant', 'PemilikTenantController');
   Route::resource('penyewa', 'PenyewaController');
   Route::resource('sewa', 'SewaController');

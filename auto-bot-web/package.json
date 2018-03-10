@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "vue-router": "^3.0.1",
+        "vue2-google-maps": "^0.8.11",
         "vuetify": "^1.0.5"
     }
 }

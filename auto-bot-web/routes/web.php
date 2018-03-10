@@ -14,6 +14,3 @@
 Route::get('/', function () {
     return view('admin.layout');
 });
-Route::get('/', function () {
-    return view('admin.layout');
-});

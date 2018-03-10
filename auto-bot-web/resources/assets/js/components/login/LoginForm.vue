@@ -1,16 +1,16 @@
 <template>
   <v-form v-model="valid" ref="form" lazy-validation>
     <v-text-field
-      label="Name"
-      v-model="name"
-      :rules="nameRules"
+      label="Email"
+      v-model="email"
+      :rules="emailRules"
       :counter="10"
       required
     ></v-text-field>
     <v-text-field
-      label="E-mail"
-      v-model="email"
-      :rules="emailRules"
+      label="Password"
+      v-model="password"
+      :rules="passwordRules"
       required
     ></v-text-field>
 
@@ -23,7 +23,9 @@
 
     <v-btn
       @click="submit"
-      :disabled="!valid"
+      
+      color="green"
+      dark
     >
       submit
     </v-btn>
@@ -37,12 +39,12 @@
     data: () => ({
       valid: true,
       name: '',
-      nameRules: [
+      emailRules: [
         v => !!v || 'Name is required',
         v => (v && v.length <= 10) || 'Name must be less than 10 characters'
       ],
       email: '',
-      emailRules: [
+      passwordRules: [
         v => !!v || 'E-mail is required',
         v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
       ],

@@ -20,21 +20,22 @@ Route::get('tenant','TenantController@konfirmasi');
 
 Route::get('tenant/konfirmasi','TenantController@konfirmasi');
 
+Route::get('event/generate',function(){
+	return view('event.generate');
+});
+
 Route::group(['middleware' => 'masuk'],function(){
   Route::resource('event','EventController');
 });
 
-// Route::get('coba',function(){
-//   return 'muncul';
-// })->middleware('masuk');
 
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
 
-// Route::group(['middleware' => 'masuk'], function(){
+
   Route::resource('registerr','RegisterController');
-// });
+
 
 Auth::routes();
 

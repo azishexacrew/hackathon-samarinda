@@ -39,3 +39,18 @@
 	margin-bottom: 0px;
 	}
 }
+
+.panel, .panel-heading{
+	border-radius: 0px;
+}
+
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+#body{
+	margin-bottom: 50px;
+}

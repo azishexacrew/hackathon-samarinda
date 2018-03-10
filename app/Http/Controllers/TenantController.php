@@ -11,6 +11,6 @@ class TenantController extends Controller
     }
 
     public function store(){
-      
+      return request('jenis');
     }
 }

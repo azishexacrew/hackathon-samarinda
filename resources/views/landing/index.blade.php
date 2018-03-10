@@ -7,9 +7,9 @@
 </div>
 <div class="container-fluid">
 	<div class="row text-center">
-			<button class="btn btn-lg btn-primary"">Buat Tempat Tenant</button>
-			<button class="btn btn-lg btn-primary" id="cari">Cari Tempat Tenant</button>
-	
+			<a href="{{route('event.index')}}" class="btn btn-lg btn-primary"> Buat Tempat Tenant </a>
+			<a href="#" class="btn btn-lg btn-primary">Cari Tempat Tenant</a>
+
 	</div>
 </div>
 @endsection

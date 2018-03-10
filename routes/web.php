@@ -13,7 +13,7 @@
 
 Route::get('/', 'LandingController@index');
 
-Route::get('profile','ProfileController@index');
+// Route::get('profile','ProfileController@index');
 
 Route::get('provinsi','LandingController@provinsi');
 

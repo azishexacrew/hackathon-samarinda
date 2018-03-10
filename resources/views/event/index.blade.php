@@ -34,7 +34,7 @@
   	<div class="row">
 	  		<div class="form-group col-sm-6">
 			<label for="bentuk_tenant">Bentuk Tenant</label>
-		 	<select class="form-control" id="bentuk_tenant" name="bentuk">
+		 	<select class="form-control" id="bentuk_tenant" name="bentuk_tenant">
 			  <option>Outdoor</option>
 			  <option>Indoor</option>
 			</select>
@@ -42,13 +42,13 @@
 	  	<div class="form-group col-sm-6">
 	  		<label for="jenis_tenant">Jenis Tenant</label>
 	  		<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">UKM</label>
+			 <label><input type="checkbox" name="jenis1" value="UKM">UKM</label>
 			</div>
 			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Usaha Kreatif</label>
+			 <label><input type="checkbox" name="jenis2" value="Usaha Kreatif">Usaha Kreatif</label>
 			</div>
 			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Makanan</label>
+			 <label><input type="checkbox" name="jenis" value="Makanan">Makanan</label>
 			</div>
 			<div class="checkbox">
 			 <label><input type="checkbox" name="jenis" value="">Minuman</label>

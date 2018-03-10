@@ -16,14 +16,18 @@ class RuteController extends Controller
 
   public function index()
   {
+      $rute = Rute::with('user')->first();
+
+      //return $rute;
       return rute::all();
   }
 
   public function store(Request $request)
   {
       $data = Rute::create($request->all());
+      $rute = Rute::with('user')->first();
 
-      return response()->json(['status' => 'success', 'input', 'data' => $data]);
+      return response()->json(['status' => 'success', 'input', 'data' => $data, $rute]);
   }
 
   public function show($id)
@@ -37,8 +41,9 @@ class RuteController extends Controller
   {
       $data = $this->rute::findOrFail($id);
       $data->update($request->all());
+      $rute = Rute::with('user')->first();
 
-      return response()->json(['status' => 'success', 'update','data' => $data]);
+      return response()->json(['status' => 'success', 'update','data' => $data, $rute]);
   }
 
   public function destroy($id)

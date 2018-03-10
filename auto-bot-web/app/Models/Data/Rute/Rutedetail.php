@@ -12,4 +12,9 @@ class Rutedetail extends Model
 
     protected $table = 'rutedetails';
     protected $fillable = ['rute_id', 'tps', 'status'];
+
+    public function Rute()
+    {
+        return $this->belongsTo('App\Models\Data\Rute\Rute', 'rute_id');
+    }
 }

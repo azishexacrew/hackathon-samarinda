@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Data\Rute;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Data\Rute\Rutedetail;
+use App\Models\Data\Rute\Rute;
 
 class RutedetailController extends Controller
 {
@@ -16,14 +17,18 @@ class RutedetailController extends Controller
 
   public function index()
   {
+      $rutedetail = Rutedetail::with('rute')->first();
+
+      //return $rutedetail;
       return Rutedetail::all();
   }
 
   public function store(Request $request)
   {
       $data = Rutedetail::create($request->all());
+      $rutedetail = Rutedetail::with('rute')->first();
 
-      return response()->json(['status' => 'success', 'input', 'data' => $data]);
+      return response()->json(['status' => 'success', 'input', 'data' => $data, $rutedetail]);
   }
 
   public function show($id)
@@ -37,8 +42,9 @@ class RutedetailController extends Controller
   {
       $data = $this->rutedetail::findOrFail($id);
       $data->update($request->all());
+      $rutedetail = Rutedetail::with('rute')->first();
 
-      return response()->json(['status' => 'success', 'update','data' => $data]);
+      return response()->json(['status' => 'success', 'update','data' => $data, $rutedetail]);
   }
 
   public function destroy($id)

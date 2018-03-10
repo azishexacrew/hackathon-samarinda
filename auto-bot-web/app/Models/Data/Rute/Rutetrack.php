@@ -12,4 +12,9 @@ class Rutetrack extends Model
 
     protected $table = 'rutetracks';
     protected $fillable = ['lat', 'lng', 'rute_detail'];
+
+    public function Rutedetail()
+    {
+        return $this->belongsTo('App\Models\Data\Rute\Rutedetail', 'rute_detail');
+    }
 }

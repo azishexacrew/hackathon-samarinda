@@ -18,7 +18,7 @@ class CreateRutesTable extends Migration
             $table->string('nama');
             $table->time('time');
             $table->date('date');
-            $table->string('user_id');
+            $table->string('users_id');
             $table->string('status');
             $table->timestamps();
         });

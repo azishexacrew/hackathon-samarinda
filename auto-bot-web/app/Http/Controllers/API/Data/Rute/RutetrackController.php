@@ -16,14 +16,18 @@ class RutetrackController extends Controller
 
   public function index()
   {
+      $rutetrack = Rutetrack::with('rutedetail')->first();
+
+      //return $rutetrack;
       return Rutetrack::all();
   }
 
   public function store(Request $request)
   {
       $data = Rutetrack::create($request->all());
+      $rutetrack = Rutetrack::with('rutedetail')->first();
 
-      return response()->json(['status' => 'success', 'input', 'data' => $data]);
+      return response()->json(['status' => 'success', 'input', 'data' => $data, $rutetrack]);
   }
 
   public function show($id)
@@ -37,8 +41,9 @@ class RutetrackController extends Controller
   {
       $data = $this->rutetrack::findOrFail($id);
       $data->update($request->all());
+      $rutetrack = Rutetrack::with('rutedetail')->first();
 
-      return response()->json(['status' => 'success', 'update','data' => $data]);
+      return response()->json(['status' => 'success', 'update','data' => $data, $rutetrack]);
   }
 
   public function destroy($id)

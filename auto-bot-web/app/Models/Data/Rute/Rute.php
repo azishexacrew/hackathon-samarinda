@@ -10,6 +10,11 @@ class Rute extends Model
     use Uuids;
     public $incrementing = false;
 
-    public $table = 'rutes';
-    public $fillable = ['nama', 'time', 'date', 'user_id', 'status'];
+    protected $table = 'rutes';
+    protected $fillable = ['nama', 'time', 'date', 'users_id', 'status'];
+
+    public function User()
+    {
+        return $this->belongsTo('App\Models\User', 'users_id');
+    }
 }

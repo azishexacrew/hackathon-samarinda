@@ -6,7 +6,8 @@
 @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
+@import '~vuetify/dist/vuetify.min.css';
 
 .navbar-laravel {
   background-color: #fff;

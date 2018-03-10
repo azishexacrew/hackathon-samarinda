@@ -5,9 +5,18 @@
 <div class="container-fluid">
 	<div class="row">
 		<form>
-		<div class="col-sm-offset-2 col-sm-2">
-			<img src="fdsfsd">
+
+		<div class="col-sm-offset-1 col-sm-3">
+			<div class="form-group">
+				<div class="panel panel-default text-right">
+			  		<div class="panel-heading text-left">Upload Gambar</div>
+			  		<img id="image-holder" src="#" alt="" height="100%" width="100%">
+				<input type="file" name="profileimg" id="profileimg">
+				<label for="profileimg" class="btn btn-success btn-sm" style="margin: 5px 5px 5px 5px">Input file</label>	
+			</div>
+			</div>
 		</div>
+
 		<div class="col-sm-4">
 	 <div class="form-group">
     	<label for="nama_event">Nama Event</label>

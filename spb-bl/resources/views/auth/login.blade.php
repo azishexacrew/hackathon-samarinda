@@ -59,9 +59,7 @@
 
 					<div class="text-center p-t-45 p-b-2">
 						<span class="txt1">
-							Samarinda E-Retribution System <br>
-              &copy; 2018 SPB-BL
-
+							&copy; 2018 SPB-BL &mdash; Samarinda E-Retribution System
 						</span>
 					</div>
 			</form>

@@ -13,18 +13,14 @@
 
 Route::get('/', 'LandingController@index');
 
-Route::get('provinsi','LandingController@provinsi');
+Route::get('kecamatan','KecamatanController@index');
 
 
 Route::get('tenant','TenantController@konfirmasi');
 
-Route::get('tenant/konfirmasi','TenantController@konfirmasi');
-
-Route::get('event/generate',function(){
-	return view('event.generate');
-});
 
 Route::group(['middleware' => 'masuk'],function(){
+  Route::get('event/generate','EventController@generate');
   Route::resource('event','EventController');
 });
 

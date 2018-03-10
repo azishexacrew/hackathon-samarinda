@@ -12,6 +12,10 @@ class EventController extends Controller
       return view('event.index');
     }
 
+    public function generate(){
+      return view('event.generate');
+    }
+
     public function store(){
       $event = new Event ;
 

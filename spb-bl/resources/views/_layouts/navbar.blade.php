@@ -22,12 +22,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('tenant') }}">Tenant</a>
                         </li>
+                        @if(Auth::check())
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('tenant') }}">Laporan</a>
                         </li>
+                      @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -36,12 +39,15 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         @else
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ url('user') }}"><i class="fa fa-plus-square"></i> Buat Pemilik</a>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-square"></i> &nbsp;Pemilik&nbsp;</a>
+                              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                <a class="dropdown-item" href="{{ url('pemilik') }}">Buat Data</a>
+                              </div>
                           </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-user-circle"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                  Welcome, {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

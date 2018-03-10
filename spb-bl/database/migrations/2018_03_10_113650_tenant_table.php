@@ -20,6 +20,7 @@ class TenantTable extends Migration
              $table->integer('nomor');
              $table->string('luas');
              $table->float('harga');
+             $table->integer('pemilik_id');
              $table->timestamps();
          });
      }

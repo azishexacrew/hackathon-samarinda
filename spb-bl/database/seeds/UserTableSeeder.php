@@ -16,6 +16,7 @@ class UserTableSeeder extends Seeder
          User::create([
             'name' => 'Reza Padillah',
             'email'    => 'hello@reza.cloud',
+            'level'    => 'SuperAdmin',
             'password' => bcrypt('suplexcity')
          ]);
     }

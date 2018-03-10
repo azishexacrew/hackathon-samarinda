@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Penyewa;
+use Auth;
 
 class PenyewaController extends Controller
 {
   public function index()
   {
       $active = 'pemilik';
-      $penyewa = Penyewa::orderBy('id','desc');
+      $user = Auth::user();
+      $penyewa = Penyewa::where('user_id',$user->id)->orderBy('id','desc');
       $term = request('term');
       if($term){
           $term = '%' . $term . '%';
@@ -72,6 +74,8 @@ class PenyewaController extends Controller
           'no_identitas' => 'required',
       ]);
 
+      $user = Auth::user();
+
       $penyewa->nama = request('nama');
       $penyewa->no_telp = request('no_telp');
       $penyewa->alamat = request('alamat');
@@ -79,6 +83,7 @@ class PenyewaController extends Controller
       $penyewa->tmpt_lahir = request('tmpt_lahir');
       $penyewa->tgl_lahir = request('tgl_lahir');
       $penyewa->no_identitas = request('no_identitas');
+      $penyewa->user_id = $user->id;
 
       $penyewa->save();
 
@@ -87,7 +92,7 @@ class PenyewaController extends Controller
   }
 
   public function show(){
-    
+
   }
 
   public function destroy($id)

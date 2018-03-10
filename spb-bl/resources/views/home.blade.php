@@ -70,7 +70,7 @@
           addMarker(-0.4905398,117.1435271, 'Plaza Mulia');
           addMarker(-0.5037861,117.1527143, 'Samarinda Central Plaza');
           addMarker(-0.5255916,117.113777, 'Bigmall');
-          addMarker(-0.4985521,117.1418411, 'Citra Niaga, Kecamatan Dan Kelurahan , Jumlah Tenant, Luas');
+          addMarker(-0.4985521,117.1418411, 'Citra Niaga <br> Jumlah Tenan : {{ count($data['data']) }} <br> Luas : 900m x 600m');
 
   }
       </script>

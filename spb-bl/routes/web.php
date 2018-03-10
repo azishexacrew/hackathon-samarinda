@@ -17,9 +17,7 @@ Auth::routes();
 Route::get('tenant', 'TenantController@index');
 
 Route::group(['middleware' => 'auth'], function(){
-  Route::get('/', function () {
-      return view('home');
-  });
+  Route::get('/', 'HomeController@index');
 });
 
 

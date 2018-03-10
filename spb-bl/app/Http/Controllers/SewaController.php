@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sewa;
+use App\Pemilik;
+use App\Penyewa;
+use App\PemilikTenant;
+use Auth;
 
 class SewaController extends Controller
 {
@@ -51,7 +55,11 @@ class SewaController extends Controller
       $active = 'pemilik';
       $action = route('webpemilik::sewa.' . ($id ? 'update' : 'store'), $id);
       $method = $id ? 'PUT' : 'POST';
-      return view('sewa.form' , compact('active','action','method'));
+
+      $user = Auth::user();
+      $penyewa = Penyewa::where('user_id',$user->id)->get();
+
+      return view('sewa.form' , compact('active','action','method','penyewa'));
   }
 
   public function save($request, $id = null)
@@ -63,7 +71,6 @@ class SewaController extends Controller
       }
 
       $this->validate($request, [
-          'nama' => 'required',
           'no_telp' => 'required',
           'alamat' => 'required',
           'jk' => 'required',
@@ -71,14 +78,14 @@ class SewaController extends Controller
           'tgl_lahir' => 'required',
           'no_identitas' => 'required',
       ]);
+      $user = Auth::user();
+      $pemilik = Pemilik::where('user_id',$user->id)->get();
 
-      $sewa->nama = request('nama');
-      $sewa->no_telp = request('no_telp');
-      $sewa->alamat = request('alamat');
-      $sewa->jk = request('jk');
-      $sewa->tmpt_lahir = request('tmpt_lahir');
-      $sewa->tgl_lahir = request('tgl_lahir');
-      $sewa->no_identitas = request('no_identitas');
+      $sewa->kode = str_random(5);
+      $sewa->awal = request('awal');
+      $sewa->akhir = request('akhir');
+      $sewa->lama = request('lama');
+      $sewa->pemilik_id = $pemilik->id;
 
       $sewa->save();
 

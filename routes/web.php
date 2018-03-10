@@ -26,8 +26,8 @@ Route::get('register',function(){
 
 Route::get('tenant/konfirmasi','TenantController@konfirmasi');
 
-Route::resource('event','EventController');
-
-Route::get('personalisasi',function(){
-	return view('personalisasi.index');
+Route::get('event/generate',function(){
+	return view('event.generate');
 });
+
+Route::resource('event','EventController');

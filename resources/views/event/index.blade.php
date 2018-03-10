@@ -2,7 +2,7 @@
 
 @section('tubuh')
 <div class="container text-center h3">Buat Tempat Event</div>
-<div class="container-fluid">
+<div class="container-fluid" id="body">
 	<div class="row">
 		<form>
 		<form action="{{route('event.store')}}" method="post" enctype="multipart/form-data">

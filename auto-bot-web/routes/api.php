@@ -17,6 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Route JWT Auth
+Route::get('/auth/token', 'TokenController@auth');
+Route::get('/auth/refresh', 'TokenController@refresh');
+Route::get('/auth/token/invalidate', 'TokenController@invalidate');
+
+//Route Profile
 Route::get('/', function (){
     $user = User::with('profil')->first();
     return response()->json(['data'=>$user]);

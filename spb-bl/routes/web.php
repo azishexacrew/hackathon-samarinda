@@ -17,5 +17,4 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/', function () {
         return view('home');
     });
-    Route::get('/dashboard', 'HomeController@index')->name('home');
 });

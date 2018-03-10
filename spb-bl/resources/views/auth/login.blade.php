@@ -53,7 +53,7 @@
 
 				<div class="wrap-input100 m-t-20">
 						<button type="submit" class="login100-form-btn">
-							Sign in
+							<i class="fa fa-sign-in fa-fw"></i> &nbsp; Sign in
 						</button>
 					</div>
 

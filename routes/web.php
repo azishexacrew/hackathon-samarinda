@@ -15,13 +15,6 @@ Route::get('/', function () {
     return view('landing.index');
 });
 
-<<<<<<< HEAD
 Route::get('/profile',function(){
 	return view('profile.index');
 });
-
-
-
-=======
-Route::get('kecamatan','KecamatanController@index');
->>>>>>> 2849a4af4f9954557acfd2a7d02e721c056b1d92

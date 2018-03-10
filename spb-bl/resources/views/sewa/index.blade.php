@@ -34,9 +34,11 @@
                             <tr>
                               <th><center>#</center></th>
                               <th>Kode</th>
-                              <th>Tanggal Sewa</th>
-                              <th>Lama Sewa</th>
+                              <th>Awal Sewa</th>
                               <th>Akhir Sewa</th>
+                              <th>Lama Sewa</th>
+                              <th>Pemilik</th>
+                              <th>Penyewa Tenant</th>
                               <th align="td-actions"> </th>
                             </tr>
                           </thead>
@@ -45,10 +47,12 @@
                               <tr>
                                 <td align="center">{{ $index+1+(($sewa->CurrentPage()-1)*$sewa->PerPage()) }}</td>
                                 <td>{{ $item->kode }}</td>
-                                <td>{{ $item->tgl_sewa }}</td>
-                                <td>{{ $item->lama }}</td>
+                                <td>{{ $item->awal }}</td>
                                 <td>{{ $item->akhir }}</td>
-                                <td></td>
+                                <td>{{ $item->lama }} Hari</td>
+                                <td>{{ $item->lama }} Hari</td>
+                                <td>{{ $item->lama }} Hari</td>
+                                <td>{{ $item->lama }} Hari</td>
                                 <td class="td-actions">
                                     <center>
                                         <a href="{{ route('webpemilik::sewa.edit',$item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"> </i></a>

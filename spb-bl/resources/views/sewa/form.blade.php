@@ -72,7 +72,7 @@
                       <div class="form-group">
                           <label class="control-label" for="tgl_sewa">Tanggal Sewa</label>
                           <div class="controls">
-                            <input type="text" name="tgl_sewa" placeholder="Awal" class="form-control" id="startdate" value="{{ old('awal') }}">
+                            <input type="text" name="awal" placeholder="Awal" class="form-control" id="startdate" value="{{ old('awal') }}">
                           </div>
                       </div>
 
@@ -98,6 +98,18 @@
                               <option value="{{ old('area') }}">{{ old('area') }}</option>
                                 @foreach($penyewa as $item)
                                   <option value="{{ $item['id'] }}">{{ $item['nama'] }}</option>
+                               @endforeach
+                            </select>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="control-label" for="tenant_id">Tenant</label>
+                          <div class="controls">
+                            <select class="js-example-basic-single form-control" name="tenant_id" id="tenant_id">
+                              <option value="{{ old('area') }}">{{ old('area') }}</option>
+                                @foreach($tenant as $item)
+                                  <option value="{{ $item['id'] }}">{{ $item['area'] }}</option>
                                @endforeach
                             </select>
                           </div>

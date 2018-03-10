@@ -8,6 +8,7 @@ use App\Pemilik;
 use App\Penyewa;
 use App\PemilikTenant;
 use Auth;
+use Carbon\Carbon;
 
 class SewaController extends Controller
 {
@@ -59,7 +60,9 @@ class SewaController extends Controller
       $user = Auth::user();
       $penyewa = Penyewa::where('user_id',$user->id)->get();
 
-      return view('sewa.form' , compact('active','action','method','penyewa'));
+      $tenant = PemilikTenant::where('user_id',$user->id)->get();
+
+      return view('sewa.form' , compact('active','action','method','penyewa','tenant'));
   }
 
   public function save($request, $id = null)
@@ -71,21 +74,21 @@ class SewaController extends Controller
       }
 
       $this->validate($request, [
-          'no_telp' => 'required',
-          'alamat' => 'required',
-          'jk' => 'required',
-          'tmpt_lahir' => 'required',
-          'tgl_lahir' => 'required',
-          'no_identitas' => 'required',
+          'awal' => 'required',
+          'lama' => 'required',
+          'akhir' => 'required',
+          'penyewa_id' => 'required',
+          'tenant_id' => 'required',
       ]);
       $user = Auth::user();
-      $pemilik = Pemilik::where('user_id',$user->id)->get();
 
       $sewa->kode = str_random(5);
-      $sewa->awal = request('awal');
-      $sewa->akhir = request('akhir');
+      $sewa->awal = Carbon::createFromFormat('d/m/Y', request('awal'))->format('Y-m-d');
+      $sewa->akhir = Carbon::createFromFormat('d/m/Y', request('akhir'))->format('Y-m-d');
       $sewa->lama = request('lama');
-      $sewa->pemilik_id = $pemilik->id;
+      $sewa->pemilik_id = $user->id;
+      $sewa->penyewa_id = request('penyewa_id');
+      $sewa->tenant_id = request('tenant_id');
 
       $sewa->save();
 

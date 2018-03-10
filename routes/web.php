@@ -19,10 +19,10 @@ Route::get('kecamatan','KecamatanController@index');
 Route::get('tenant','TenantController@konfirmasi');
 
 
-Route::group(['middleware' => 'masuk'],function(){
+// Route::group(['middleware' => 'masuk'],function(){
   Route::get('event/generate','EventController@generate');
   Route::resource('event','EventController');
-});
+// });
 
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
@@ -37,3 +37,15 @@ Route::get('login', function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('pembayaran',function(){
+	return view('pembayaran.index');
+});
+
+Route::get('pembayaran/konfirmasi',function(){
+	return view('pembayaran.konfirmasibayar');
+});
+
+Route::get('pembayaran/cara',function(){
+	return view('pembayaran.carabayar');
+});

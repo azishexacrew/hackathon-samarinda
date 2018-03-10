@@ -26,6 +26,7 @@ Route::group(['prefix'=>'pemilik','as' => 'webpemilik::','middleware' => ['auth'
   Route::resource('tenant', 'PemilikTenantController');
   Route::resource('penyewa', 'PenyewaController');
   Route::resource('sewa', 'SewaController');
+  Route::get('sewa/bukti-sewa/{id}', 'SewaController@print');
 
 });
 

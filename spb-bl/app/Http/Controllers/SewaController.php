@@ -103,4 +103,10 @@ class SewaController extends Controller
       $sewa->delete();
       return redirect(route('webpemilik::sewa.index'));
   }
+
+  public function print($id){
+    $user = Auth::user();
+    $sewa = Sewa::with('pemilik','tenant','penyewa')->where('pemilik_id',$user->id)->orWhere('id',$id)->first();
+    return view('sewa.print', compact('sewa'));
+  }
 }

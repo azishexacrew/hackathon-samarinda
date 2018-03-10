@@ -15,8 +15,9 @@ class CreateEventTable extends Migration
     {
       Schema::create('event', function (Blueprint $table) {
          $table->increments('id');
-         $table->string('kunci')->nullable();
          $table->string('nama')->nullable();
+         $table->integer('user_id')->unsigned();
+         $table->string('kunci')->nullable();
          $table->string('penjelasan')->nullable();
          $table->string('alamat')->nullable();
          $table->datetime('waktu')->nullable();

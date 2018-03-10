@@ -11,30 +11,25 @@
 |
 */
 
-Route::get('/', 'LandingController@index');
-
-Route::get('kecamatan','KecamatanController@index');
-
+Route::get('/', 'LandingController@index')->name('landingpage');
 
 Route::get('tenant','TenantController@konfirmasi');
 
 
-// Route::group(['middleware' => 'masuk'],function(){
-  Route::get('event/generate','EventController@generate');
-  Route::resource('event','EventController');
-// });
+Route::resource('event','EventController');
 
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
 
 Route::resource('registerr','RegisterController');
+Route::get('loginn','LoginController@index')->name('loginn.index');
+Route::post('loginn/store','LoginController@store')->name('loginn.store');
+Route::get('loginn/logout','LoginController@logout')->name('loginn.logout');
+
+Route::resource('pengaturan','PengaturanController');
 
 Auth::routes();
-
-Route::get('login', function(){
-	return view('login.index');
-});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

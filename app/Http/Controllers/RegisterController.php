@@ -18,14 +18,14 @@ class RegisterController extends Controller
     public function store(){
       $user = new User;
 
-      $this->validate(request(),[
-        'name' => 'required',
-        'email' => 'required|email',
-        'username' => 'required',
-        'hp' => 'required|numeric',
-        'jenis_kelamin' => 'required',
-        'alamat' => 'required'
-      ]);
+      // $this->validate(request(),[
+      //   'name' => 'required',
+      //   'email' => 'required|email',
+      //   'username' => 'required',
+      //   'hp' => 'required|numeric',
+      //   'jenis_kelamin' => 'required',
+      //   'alamat' => 'required'
+      // ]);
 
       $user->nama = request('name');
       $user->password = bcrypt(request('password'));
@@ -38,6 +38,7 @@ class RegisterController extends Controller
 
       if ($user) {
         session()->put('note','berhasil');
+        return redirect()->route('login',['note' => true]);
       }
 
       return redirect()->route('registerr.index',['note' => true]);

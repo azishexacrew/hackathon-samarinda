@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { AsyncStorage, Alert } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Drawer } from 'native-base';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Drawer, Thumbnail, View } from 'native-base';
 import Styles from '../resource/style';
 import SebaranTps from './report/SebaranTps'
 import Dashboard from './report/Dashboard'
@@ -16,8 +16,8 @@ export default class Landing extends Component {
   constructor(){
     super()
     this.state = {
-      isLogin : true,
-      screen : 'Dashboard'
+      isLogin : false,
+      screen : 'Dashboard',
     }
   }
 
@@ -37,7 +37,8 @@ export default class Landing extends Component {
       'Perhatian !',
       'Harap Login Terlebih Dahulu',
       [
-        {text: 'OK'},
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'OK', onPress: () => this.props.navigation.navigate('Loginscreen') },
       ],
       { cancelable: false }
     )
@@ -68,6 +69,14 @@ export default class Landing extends Component {
     })
   }
 
+  onLogout(){
+      AsyncStorage.clear();
+      this.setState({
+        isLogin : false
+      })
+      this.closeDrawer();
+  }
+
   render() {
     return (
       <Drawer
@@ -75,6 +84,33 @@ export default class Landing extends Component {
         content={
           <Container style = { Styles.backgroundWhite } >
             <Content>
+              <View style={{ marginTop : 20}}>
+                <View style={ Styles.toCenter }>
+                  <Thumbnail square large source={require('../resource/img/logo.png')} />
+                </View>
+              </View>
+              <View style={{ marginTop : 20}}>
+                <Button block transparent>
+                  <Text>
+                    Home
+                  </Text>
+                </Button>
+                <Button block transparent>
+                  <Text>
+                    Laporan
+                  </Text>
+                </Button>
+                <Button block transparent>
+                  <Text>
+                    Profile
+                  </Text>
+                </Button>
+                <Button block transparent onPress={ this.onLogout.bind(this) }>
+                  <Text>
+                    Logout
+                  </Text>
+                </Button>
+              </View>
             </Content>
           </Container>
         }
@@ -112,23 +148,29 @@ export default class Landing extends Component {
           </Container>
           <Footer style={ Styles.primaryColor }>
             <FooterTab style={ Styles.primaryColor }>
-                <Button vertical onPress={ this.onPressDashboard.bind(this) } >
+                <Button vertical style={ this.state.screen == 'Dashboard' ? button.true : null } onPress={ this.onPressDashboard.bind(this) } >
                   <Icon style={ Styles.textWhite } name="ios-podium" />
                   <Text style={ Styles.textWhite }>Dashboard</Text>
                 </Button>
-                <Button vertical onPress={ this.onPressSebaran.bind(this) } >
+                <Button vertical style={ this.state.screen == 'Sebaran' ? button.true : null } onPress={ this.onPressSebaran.bind(this) } >
                   <Icon style={ Styles.textWhite } name="navigate" />
-                  <Text style={ Styles.textWhite } >Sebaran</Text>
+                  <Text style={ Styles.textWhite } >TPS</Text>
                 </Button>
-                <Button vertical onPress={ this.onPressTracking.bind(this) } >
+                <Button vertical style={ this.state.screen == 'Tracking' ? button.true : null } onPress={ this.onPressTracking.bind(this) } >
                   <Icon style={ Styles.textWhite } name="md-list" />
                   <Text style={ Styles.textWhite } >Tracking</Text>
                 </Button>
-              </FooterTab>
+            </FooterTab>
           </Footer>
         </Container>
 
       </Drawer>
     );
+  }
+}
+
+const button = {
+  true : {
+    backgroundColor : '#00897B',
   }
 }

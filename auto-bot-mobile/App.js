@@ -39,7 +39,7 @@ export default StackNavigator({
   },
   Landingscreen : {
     screen : Landingscreen,
-  }
+  },
 }, {
   initialRouteName : 'Landingscreen'
 } );

@@ -12,11 +12,13 @@ import MapView from 'react-native-maps';
 
 import Styles from '../../resource/style'
 
+import { url } from '../../services/Network'
+
 var {height, width} = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 0;
-const LONGITUDE = 0;
+const LATITUDE = -0.4955865;
+const LONGITUDE = 117.1370024;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
@@ -25,22 +27,49 @@ export default class MyComponent extends Component {
   constructor(){
     super()
     this.state = {
-      isLoading : false,
+      isLoading : true,
       region: [
         {
-          latitude: LATITUDE,
-          longitude: LONGITUDE
-        },
-        {
-          latitude: 0.01,
-          longitude: 0.01
+          nama : 'TPS 1',
+          kordinate : {
+            latitude: LATITUDE,
+            longitude: LONGITUDE
+          }
         }
       ]
     }
   }
 
   componentDidMount(){
+    this.getListSebaranData();
+  }
 
+  getListSebaranData(){
+    fetch(url + 'data/tps', {
+      method: 'GET',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseData) => {
+      let responseKordinate = [];
+      for (var i = 0; i < responseData.length; i++) {
+          responseKordinate.push({
+            nama : responseData[i].nama,
+            kordinate : {
+              latitude : parseFloat(responseData[i].lat),
+              longitude : parseFloat(responseData[i].lng)
+            }
+          })
+      }
+      console.log(responseKordinate);
+      this.setState({
+        region : responseKordinate,
+        isLoading : false
+      })
+      console.log(this.state.region);
+    });
   }
 
   render() {
@@ -71,7 +100,7 @@ export default class MyComponent extends Component {
             {
               this.state.region.map((data, key) => (
                 <MapView.Marker key={key}
-                  coordinate={ data }
+                  coordinate={ data.kordinate }
                  />
               ))
             }

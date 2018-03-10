@@ -24,7 +24,8 @@
 }
 
 #user-icon{
-	margin-top: 70px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .fa-check{
@@ -35,5 +36,6 @@
 @media(max-width: 576px){
 	#user-icon{
 	margin-top: 0px;
+	margin-bottom: 0px;
 	}
 }

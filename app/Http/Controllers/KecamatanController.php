@@ -34,7 +34,6 @@ class KecamatanController extends Controller
       }else{
         $json = json_decode($response,true);
         return $json ;
-        // coba
       }
     }
 }

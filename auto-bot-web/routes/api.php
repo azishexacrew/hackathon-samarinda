@@ -55,6 +55,13 @@ Route::group(['prefix' => 'data', 'namespace' => 'API\Data'], function(){
     Route::post('/angkutan/edit/{id}', 'AngkutanController@update');
     Route::delete('/angkutan/delete/{id}', 'AngkutanController@destroy');
     Route::get('/angkutan/{id}', 'AngkutanController@show');
+
+    //Route RegistrasiController
+    Route::get('/registrasi', 'RegistrasiController@index');
+    Route::post('/registrasi/create', 'RegistrasiController@store');
+    Route::post('/registrasi/edit/{id}', 'RegistrasiController@update');
+    Route::delete('/registrasi/delete/{id}', 'RegistrasiController@destroy');
+    Route::get('/registrasi/{id}', 'RegistrasiController@show');
 });
 
 Route::group(['prefix' => 'data'], function(){

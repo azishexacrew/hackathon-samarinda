@@ -17,7 +17,7 @@ import com.trash.poin.poin_trash.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SetorSampahFragment extends Fragment {
+public class SetorSampahFragment extends BaseFragmentBottomNavigation {
 
     public SetorSampahFragment() {
         // Required empty public constructor

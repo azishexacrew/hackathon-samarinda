@@ -11,4 +11,5 @@ class Reportpersonal extends Model
     public $incrementing = false;
 
     protected $table = 'reportpersonals';
+    protected $fillable = ['users_id', 'tps_id', 'qty', 'time', 'date'];
 }

@@ -1,5 +1,21 @@
 @extends('_layouts.basic')
 
+@section('script-top')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
+
+@section('script-bottom')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".js-example-basic-single").select2({
+        placeholder: "Pilih Area",
+        allowClear: true
+      });
+    });
+  </script>
+@endsection
+
 @section('content')
   <main class="py-4">
     <div class="col-md-12">
@@ -21,7 +37,15 @@
                       <div class="form-group">
                           <label class="control-label" for="area">Area</label>
                           <div class="controls">
-                              <input type="text" name="area" placeholder="Area" class="form-control" id="area" value="{{ old('area') }}">
+                            <select class="js-example-basic-single form-control" name="area" id="area">
+                              <option value="{{ old('area') }}">{{ old('area') }}</option>
+                                @foreach($apiArea as $item)
+                                  <option value="{{ $item['nama'] }}">{{ $item['nama'] }}</option>
+                               @endforeach
+                               @foreach($apiArea2 as $item)
+                                 <option value="{{ $item['nama'] }}">{{ $item['nama'] }}</option>
+                              @endforeach
+                            </select>
                           </div>
                       </div>
 

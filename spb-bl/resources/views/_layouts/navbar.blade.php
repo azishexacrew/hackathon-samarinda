@@ -36,7 +36,7 @@
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-square fa-fw"></i> Penyewa&nbsp;</a>
                                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
                                   <a class="dropdown-item" href="{{ url('pemilik/penyewa') }}">Buat Penyewa</a>
-                                  <a class="dropdown-item" href="{{ url('pemilik/penyewa/sewa') }}">Buat Sewa</a>
+                                  <a class="dropdown-item" href="{{ url('pemilik/sewa') }}">Buat Sewa</a>
                                 </div>
                             </li>
                           @endif

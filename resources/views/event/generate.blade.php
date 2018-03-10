@@ -1,5 +1,6 @@
 @extends('_layouts.default')
 
+
 @section('tubuh')
 <div class="panel panel-primary">
   <div class="panel-heading text-center">
@@ -23,3 +24,5 @@
   	</div>
     </div>
 @endsection
+ 
+

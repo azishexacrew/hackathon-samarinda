@@ -9,7 +9,6 @@
 	<div class="row text-center">
 			<a href="{{route('event.index')}}" class="btn btn-lg btn-primary"> Buat Tempat Tenant </a>
 			<a href="#" class="btn btn-lg btn-primary">Cari Tempat Tenant</a>
-
 	</div>
 </div>
 @endsection

@@ -56,7 +56,7 @@
                                 <td>{{ $item->tenant->area }}</td>
                                 <td class="td-actions">
                                     <center>
-                                      <a href="" class="btn btn-sm btn-success"><i class="fa fa-print fa-fw"> </i> Cetak</a>
+                                      <a href="{{ url('pemilik/sewa/bukti-sewa', $item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-print fa-fw"> </i> Cetak</a>
                                         <a href="{{ route('webpemilik::sewa.edit',$item->id) }}" class="btn btn-sm btn-warning"><i class="fa fa-edit"> </i></a>
                                         <a href="{{ route('webpemilik::sewa.destroy', $item->id) }}" data-method="DELETE" data-confirm="Apakah anda yakin akan menghapus data sewa : {{ $item->nama}} ?" class="btn btn-danger btn-sm"><i class="fa fa-close"> </i></a>
                                     </center>

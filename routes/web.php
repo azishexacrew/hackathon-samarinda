@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'LandingController@index');
+Route::get('/', 'LandingController@index')->name('landingpage');
 
 Route::get('kecamatan','KecamatanController@index');
 
@@ -29,11 +29,8 @@ Route::get('personalisasi',function(){
 });
 
 Route::resource('registerr','RegisterController');
+Route::resource('loginn','LoginController');
 
 Auth::routes();
-
-Route::get('login', function(){
-	return view('login.index');
-});
 
 Route::get('/home', 'HomeController@index')->name('home');

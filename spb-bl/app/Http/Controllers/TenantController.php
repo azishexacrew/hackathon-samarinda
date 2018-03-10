@@ -42,6 +42,6 @@ class TenantController extends Controller
      //     $user->where('name','LIKE', $term);
      // }
 
-     return view('tenant.index', compact('data'));
+     return view('tracking-tenant.index', compact('data'));
     }
 }

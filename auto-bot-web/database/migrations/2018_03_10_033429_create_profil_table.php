@@ -17,7 +17,7 @@ class CreateProfilTable extends Migration
             $table->uuid('id')->primary();
             $table->string('users_id');
             $table->string('NIK')->default(null);
-            $table->string('alamat')->default(null);
+            $table->string('address')->default(null);
             $table->string('kecamatan')->default(null);
             $table->string('kelurahan')->default(null);
             $table->string('rt')->default(null);

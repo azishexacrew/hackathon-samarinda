@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
         Profil::create([
             'NIK' => '',
             'users_id' => $id,
-            'alamat' => '',
+            'address' => '',
             'kecamatan' => '',
             'kelurahan' => '',
             'rt' => '',

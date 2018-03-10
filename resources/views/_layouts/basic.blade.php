@@ -18,5 +18,8 @@
 <script src="{{asset('js/tengger.js')}}"></script>
 <script src="{{asset('js/lightbox.js')}}"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
   </body>
 </html>

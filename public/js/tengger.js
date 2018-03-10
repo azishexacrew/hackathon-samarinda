@@ -14,3 +14,17 @@ function readURL(input) {
 $("#profileimg").change(function() {
   	readURL(this);
 });
+
+$( "#register-form" ).validate({
+  rules: {
+    username: {
+      required: true
+    },
+    parent: {
+      required: function(element) {
+        return $("#age").val() < 13;
+      }
+    }
+  }
+});
+

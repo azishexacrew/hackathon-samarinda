@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('anak');
+});
+
+Route::get('/ibu', function () {
+    return view('ibu');
+});
+
+Route::get('/home', function() {
+	return view('pages.home');
 });

@@ -59,7 +59,7 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-45 p-b-2">
+					<div class="text-center p-t-35 p-b-2">
 						<span class="txt1">
 							&copy; 2018 SPB-BL &mdash; Samarinda E-Retribution System
 						</span>

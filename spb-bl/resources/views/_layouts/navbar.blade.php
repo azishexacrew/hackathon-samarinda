@@ -36,6 +36,9 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         @else
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ url('user') }}"><i class="fa fa-plus-square"></i> Buat User</a>
+                          </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-user-circle"></i> {{ Auth::user()->name }} <span class="caret"></span>

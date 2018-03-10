@@ -17,7 +17,7 @@
 </head>
 <body>
         @include('_layouts.navbar')
-        
+        <div class="clearfix"></div>
         @yield('content')
 
     <!-- Scripts -->

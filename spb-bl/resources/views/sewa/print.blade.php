@@ -54,10 +54,10 @@
                         </thead>
                     </table>
                 </div>
-                <div class="col-xs-6 text-right">
+                <div class="col-xs-6 m-t-10 text-right">
                     <div class="clearfix">
                         <div class="pull-right barcode-wrapper">
-                            {{-- <img src='data:image/png;base64,{!! DNS1D::getBarcodePNG($skck->kode_registrasi, "C128") !!}' alt=""> --}}
+                            <img src='data:image/png;base64,{!! DNS2D::getBarcodePNG($sewa->kode, "QRCODE") !!}' alt="Barcode Kode Sewa" width="130">
                         </div>
                     </div>
                     <h3 style="text-transform:uppercase;letter-spacing:8px;">

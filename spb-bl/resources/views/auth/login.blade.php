@@ -16,7 +16,7 @@
     <link href="{{ asset('css/util.css') }}" rel="stylesheet">
 </head>
 <body>
-
+  <div id="particles-js"></div>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
@@ -51,15 +51,17 @@
 					<span class="focus-input100-2"></span>
 				</div>
 
-				<div class="container-login100-form-btn m-t-20">
+				<div class="wrap-input100 m-t-20">
 						<button type="submit" class="login100-form-btn">
 							Sign in
 						</button>
 					</div>
 
-					<div class="text-center p-t-45 p-b-4">
+					<div class="text-center p-t-45 p-b-2">
 						<span class="txt1">
-							&copy; 2018 SPB-BL &mdash; Samarinda E-Retribution System
+							Samarinda E-Retribution System <br>
+              &copy; 2018 SPB-BL
+
 						</span>
 					</div>
 			</form>
@@ -70,5 +72,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            particlesJS.load('particles-js', 'json/particles.json', function() {
+              console.log('callback - particles.js config loaded');
+          });
+       });
+    </script>
 </body>
 </html>

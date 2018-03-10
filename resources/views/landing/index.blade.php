@@ -11,6 +11,5 @@
 			<button class="btn btn-lg btn-primary" id="cari">Cari Tempat Tenant</button>
 	
 	</div>
-
 </div>
 @endsection

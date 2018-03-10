@@ -1,0 +1,56 @@
+.navbar {
+	border-radius: 0px;
+}
+
+.btn{
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#profileimg {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+/* haidi */
+
+.kotak-konfirmasi{
+	border-style :solid;
+	border-width :3;
+	margin-top: 0px;
+}
+
+#user-icon{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.fa-check, .fa-key{
+	margin-right: 5px;
+	margin-left: -5px;
+}
+
+@media(max-width: 576px){
+	#user-icon{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+}
+
+.panel, .panel-heading{
+	border-radius: 0px;
+}
+
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+#body{
+	margin-bottom: 50px;
+}

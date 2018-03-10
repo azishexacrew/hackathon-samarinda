@@ -7,6 +7,7 @@
 	margin-top: 20px;
 }
 
+<<<<<<< HEAD
 #profileimg {
 	width: 0.1px;
 	height: 0.1px;
@@ -15,3 +16,12 @@
 	position: absolute;
 	z-index: -1;
 }
+=======
+/* haidi */
+
+.kotak-konfirmasi{
+	border-style :solid;
+	border-width :3;
+	margin-top: 0px;
+}
+>>>>>>> ae5dcde0cb3ff0924269342858c9f398a5ece9f2

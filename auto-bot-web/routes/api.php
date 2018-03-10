@@ -56,3 +56,29 @@ Route::group(['prefix' => 'data', 'namespace' => 'API\Data'], function(){
     Route::delete('/angkutan/delete/{id}', 'AngkutanController@destroy');
     Route::get('/angkutan/{id}', 'AngkutanController@show');
 });
+
+Route::group(['prefix' => 'data'], function(){
+    Route::group(['prefix' => 'rute', 'namespace' => 'API\Data\Rute'], function (){
+
+        //Route Rute
+        Route::get('/rute', 'RuteController@index');
+        Route::post('/rute/create', 'RuteController@store');
+        Route::post('/rute/edit/{id}', 'RuteController@update');
+        Route::delete('/rute/delete/{id}', 'RuteController@destroy');
+        Route::get('/rute/{id}', 'RuteController@show');
+
+        //Route Rute Detail
+        Route::get('/rutedetail', 'RutedetailController@index');
+        Route::post('/rutedetail/create', 'RutedetailController@store');
+        Route::post('/rutedetail/edit/{id}', 'RutedetailController@update');
+        Route::delete('/rutedetail/delete/{id}', 'RutedetailController@destroy');
+        Route::get('/rutedetail/{id}', 'RutedetailController@show');
+
+        //Route Rute Track
+        Route::get('/rutetrack', 'RutetrackController@index');
+        Route::post('/rutetrack/create', 'RutetrackController@store');
+        Route::post('/rutetrack/edit/{id}', 'RutetrackController@update');
+        Route::delete('/rutetrack/delete/{id}', 'RutetrackController@destroy');
+        Route::get('/rutetrack/{id}', 'RutetrackController@show');
+    });
+});

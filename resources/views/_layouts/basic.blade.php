@@ -8,6 +8,6 @@
   </head>
   <body>
     @yield('konten')
-    <script src="{{mix('js/app.js')}}"></script>
+    <script type="text/javascript" source="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
   </body>
 </html>

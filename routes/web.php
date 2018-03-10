@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing.index');
-});
+Route::get('/', 'LandingController@index');
 
-Route::get('/profile',function(){
-	return view('profile.index');
-});
+Route::get('/profile','ProfileController@index');

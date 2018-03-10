@@ -21,3 +21,13 @@ Route::get('/', function (){
     $user = User::with('profil')->first();
     return response()->json(['data'=>$user]);
 });
+
+Route::group(['prefix' => 'report'], function (){
+
+    Route::group(['prefix' => 'personal', 'namespace' => 'API\Report\Personal'], function (){
+
+        Route::get('/{id}', 'ReportpersonalController@getPersonalreport');
+
+    });
+
+});

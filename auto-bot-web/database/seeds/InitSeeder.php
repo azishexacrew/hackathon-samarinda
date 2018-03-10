@@ -3,8 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Profil;
+use App\Models\Data\Tps;
 
-class UsersTableSeeder extends Seeder
+class InitSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +16,14 @@ class UsersTableSeeder extends Seeder
     {
         $this->trucated();
         $this->userCreate();
+        $this->tpsCreate();
     }
 
     protected function trucated()
     {
         User::truncate();
         Profil::truncate();
+        Tps::truncate();
     }
 
     protected function userCreate(){
@@ -32,7 +35,6 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('asdasd');
 
         $user->save();
-
         $this->profilCreate($user->id);
     }
 
@@ -46,6 +48,16 @@ class UsersTableSeeder extends Seeder
             'rt' => '',
             'lat' => '',
             'lng' => '',
+        ]);
+    }
+
+    protected function tpsCreate(){
+        Tps::create([
+            'address' => 'Jalan Danau Jempang',
+            'kecamatan' => 'Samarinda Kota',
+            'kelurahan' => 'Sungai Pinang Luar',
+            'lat' => '-0.4948406',
+            'lng' => '117.1539942 ',
         ]);
     }
 }

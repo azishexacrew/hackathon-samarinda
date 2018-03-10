@@ -20,7 +20,7 @@ Route::get('tenant','TenantController@konfirmasi');
 
 
 Route::group(['middleware' => 'masuk'],function(){
-  Route::get('event/generate','EventController@generate');
+  Route::get('event/generate','EventController@generate')->name('event.generate');
   Route::resource('event','EventController');
 });
 

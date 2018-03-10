@@ -13,13 +13,14 @@ class EventController extends Controller
     }
 
     public function generate(){
-      return view('event.generate');
+      $kunci = request('kunci');
+      return view('event.generate',compact('kunci'));
     }
 
     public function store(){
       $event = new Event ;
-
       $event->nama = request('nama');
+      $event->kunci = $this->random();
       $event->penjelasan = request('penjelasan');
       $event->alamat = request('alamat');
       $event->bentuk_tenant = request('bentuk_tenant');
@@ -38,9 +39,14 @@ class EventController extends Controller
       $event->save();
 
       if ($event) {
-          return view('event.generate');
+          return redirect()->route('event.generate',['kunci' => $event->kunci]);
       }else{
           return 'gagal';
       }
+    }
+
+    public function random(){
+        $random = substr(md5(microtime()),rand(1,26),5);
+        return $random ;
     }
 }

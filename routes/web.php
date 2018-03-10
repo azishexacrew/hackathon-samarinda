@@ -13,9 +13,6 @@
 
 Route::get('/', 'LandingController@index')->name('landingpage');
 
-Route::get('kecamatan','KecamatanController@index');
-
-
 Route::get('tenant','TenantController@konfirmasi');
 
 
@@ -29,7 +26,11 @@ Route::get('personalisasi',function(){
 });
 
 Route::resource('registerr','RegisterController');
-Route::resource('loginn','LoginController');
+Route::get('loginn','LoginController@index')->name('loginn.index');
+Route::post('loginn/store','LoginController@store')->name('loginn.store');
+Route::get('loginn/logout','LoginController@logout')->name('loginn.logout');
+
+Route::resource('pengaturan','PengaturanController');
 
 Auth::routes();
 

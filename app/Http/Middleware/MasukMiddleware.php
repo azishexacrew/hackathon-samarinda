@@ -21,6 +21,6 @@ class MasukMiddleware
             return $next($request);
         }
 
-        return redirect()->route('registerr.index');
+        return redirect()->route('loginn.index');
     }
 }

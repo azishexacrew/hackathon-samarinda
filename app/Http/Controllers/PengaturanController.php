@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\API\Provinsi ;
-
-class LandingController extends Controller
+class PengaturanController extends Controller
 {
     public function index(){
-      return view('landing.index');
+      return view('pengaturan.index');
     }
 }

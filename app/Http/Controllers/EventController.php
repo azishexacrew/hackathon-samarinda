@@ -6,10 +6,29 @@ use Illuminate\Http\Request;
 
 use App\Models\Event ;
 
+use App\API\Kecamatan;
+
 class EventController extends Controller
 {
+    public function __construct(Kecamatan $kecamatan){
+      $this->kecamatan = $kecamatan;
+    }
+
     public function index(){
-      return view('event.index');
+      $event = Event::paginate(10);
+
+      return view('event.index',compact('event'));
+    }
+
+    public function create(){
+      $kec = $this->kecamatan->index() ;
+      return view('event.form',compact('kec'));
+    }
+
+    public function edit($id){
+      $event = Event::find($id);
+
+      return view('event.detail',compact('event'));
     }
 
     public function generate(){

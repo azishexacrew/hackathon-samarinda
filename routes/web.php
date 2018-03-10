@@ -24,14 +24,16 @@ Route::group(['middleware' => 'masuk'],function(){
   Route::resource('event','EventController');
 });
 
-
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
 
 Route::resource('registerr','RegisterController');
 
-
 Auth::routes();
+
+Route::get('login', function(){
+	return view('login.index');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -26,9 +26,10 @@ class TokenController extends Controller
                                     ], 422);
         }
         $token = JWTAuth::attempt($credentials);
+
         $users = User::all();
 
-        if ($token . $users) {
+        if ($token ) {
             return response()->json(['token' => $token, 'user' => $users]);
         } else {
             return response()->json(['code' => 2, 'message' => 'Invalid credentials.'], 401);

@@ -8,6 +8,10 @@ use App\Models\Event ;
 
 class EventController extends Controller
 {
+    public function index(){
+      return view('event.index');
+    }
+
     public function store(){
       $event = new Event ;
 

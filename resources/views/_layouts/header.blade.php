@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{asset('/')}}">Halalam Depan <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{asset('profile')}}">Profil </a></li>
+        <li><a href="#">Profil </a></li>
         <li><a href="#">Profil Tenant </a></li>
         <li><a href="#">Pengaturan </a></li>
         <li><a href="#">Manage Tenant </a></li>

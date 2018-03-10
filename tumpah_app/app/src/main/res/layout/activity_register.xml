@@ -4,6 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alim_pc.dc_tumpah.register">
+    android:background="#ffffff"
+    tools:context="com.example.alim_pc.dc_tumpah.Login">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/login" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="88dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="66dp"
+        android:background="@drawable/btnlogin"
+        android:onClick="btnlogin"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="91dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/btndaftar2"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="151dp"
+            android:layout_marginStart="153dp"
+            android:fontFamily="serif"
+            android:text="Daftar Sebagai:"
+            android:textColor="#000000"
+            android:textSize="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="346dp" />
+
+        <Button
+            android:id="@+id/pengguna"
+            android:layout_width="131dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="127dp"
+            android:layout_marginStart="127dp"
+            android:text="PENGGUNA"
+            android:clickable="true"
+            android:onClick="btnpengguna"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pengguna"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/partner"
+            android:layout_width="132dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="127dp"
+            android:layout_marginStart="127dp"
+            android:text="Partner"
+            android:onClick="btnpartner"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pengguna"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/banksampah"
+            android:layout_width="133dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="127dp"
+            android:layout_marginStart="127dp"
+            android:text="BANK SAMPAH"
+            android:onClick="btnbanksampah"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pengguna"
+            app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout><![CDATA[
+
+    />
+
+
+]]>
 </android.support.constraint.ConstraintLayout>
+

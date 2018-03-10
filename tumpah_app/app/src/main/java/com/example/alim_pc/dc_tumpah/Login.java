@@ -3,9 +3,13 @@ package com.example.alim_pc.dc_tumpah;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+
 
 public class Login extends AppCompatActivity {
 
@@ -13,10 +17,11 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 
     public void next(){
-        startActivity(new Intent(Login.this, register.class));
+        startActivity(new Intent(Login.this, ScanBarcode.class));
         finish();
     }
     EditText username, password;
@@ -42,5 +47,13 @@ public class Login extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Login Gagal!", Toast.LENGTH_SHORT).show();
         }
 
+    }
+    public void btnlupas(View v){
+        startActivity(new Intent(Login.this, LupaPassword.class));
+        finish();
+    }
+    public void btndaftar(View v){
+        startActivity(new Intent(Login.this, register.class));
+        finish();
     }
 }

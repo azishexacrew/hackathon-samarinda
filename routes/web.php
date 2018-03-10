@@ -18,19 +18,23 @@ Route::get('provinsi','LandingController@provinsi');
 
 Route::get('tenant','TenantController@konfirmasi');
 
-Route::get('register',function(){
-	return view('register.index');
-});
-
 Route::get('tenant/konfirmasi','TenantController@konfirmasi');
 
-Route::resource('event','EventController');
+Route::group(['middleware' => 'masuk'],function(){
+  Route::resource('event','EventController');
+});
+
+// Route::get('coba',function(){
+//   return 'muncul';
+// })->middleware('masuk');
 
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
 
-Route::resource('registerr','RegisterController');
+// Route::group(['middleware' => 'masuk'], function(){
+  Route::resource('registerr','RegisterController');
+// });
 
 Auth::routes();
 

@@ -34,7 +34,7 @@ class EventController extends Controller
       $event->save();
 
       if ($event) {
-          return 'berhasil';
+          return view('event.generate');
       }else{
           return 'gagal';
       }

@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">E-Tenant</a>
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('image/Logo.png')}}" class="img-responsive" alt="Responsive image" height="100" width="100">
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -9,5 +9,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ddd">ddd</string>
-    <string name="url_base">http://rifan.britech.id/</string>
+    <string name="url_base">http://Rifan.britech.id/</string>
+    <string name="title_activity_bank_sampah_lokasi_maps">Map</string>
 </resources>

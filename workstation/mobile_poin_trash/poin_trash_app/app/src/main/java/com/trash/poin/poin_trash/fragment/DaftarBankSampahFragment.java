@@ -11,9 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.trash.poin.poin_trash.R;
+import com.trash.poin.poin_trash.activity.BankSampahLokasiMaps;
 import com.trash.poin.poin_trash.activity.Login;
 import com.trash.poin.poin_trash.adapter.AdapterBankSampah;
 import com.trash.poin.poin_trash.config.Const;
@@ -42,6 +44,7 @@ public class DaftarBankSampahFragment extends BaseFragmentBottomNavigation {
     Context context;
     private RecyclerView recyclerView;
     private Retrofit retrofit;
+    Button maps;
 
     public DaftarBankSampahFragment() {
         // Required empty public constructor
@@ -57,9 +60,19 @@ public class DaftarBankSampahFragment extends BaseFragmentBottomNavigation {
         initializeRetrofit();
         lLayout = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
 
+//        maps = view.findViewById(R.id.)
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(lLayout);
+
+//        maps = view.findViewById(R.id.maps);
+//        maps.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), BankSampahLokasiMaps.class);
+//                startActivity(intent);
+//            }
+//        });
 
         getBankSampah(context);
 

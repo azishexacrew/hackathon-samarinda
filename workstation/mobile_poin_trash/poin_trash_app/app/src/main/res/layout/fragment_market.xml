@@ -1,7 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:background="#f7fbff"
     android:paddingLeft="2dp"
@@ -9,15 +10,347 @@
     android:paddingTop="2dp"
     tools:context="com.trash.poin.poin_trash.fragment.MarketFragment">
 
-    <include
-        android:layout_weight="1"
-        layout="@layout/list_layout_market"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-    <include
-        android:layout_weight="1"
-        layout="@layout/list_layout_market"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:elevation="2dp"
+                android:gravity="center|left"
+                android:background="#FFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:id="@+id/mGambar"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:src="@drawable/example"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="1dp"/>
+
+                <TextView
+                    android:id="@+id/mNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kerajinan tangan sivenir dari BOTOL BEKAS PKK."
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#1a1a1a"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                     android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="Rp "/>
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:id="@+id/mHarga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="20.000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginRight="4dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/location_secone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:text="Jalan samratulangi no.12 Rt.24 kel.siolali Wonosobo."/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:elevation="2dp"
+                android:gravity="center|left"
+                android:background="#FFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:src="@drawable/example"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="1dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kerajinan tangan sivenir dari BOTOL BEKAS PKK."
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#1a1a1a"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                     android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="Rp "/>
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="20.000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginRight="4dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/location_secone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:text="Jalan samratulangi no.12 Rt.24 kel.siolali Wonosobo."/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:elevation="2dp"
+                android:gravity="center|left"
+                android:background="#FFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:id="@+id/mGambar"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:src="@drawable/example"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="1dp"/>
+
+                <TextView
+                    android:id="@+id/mNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kerajinan tangan sivenir dari BOTOL BEKAS PKK."
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#1a1a1a"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                     android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="Rp "/>
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:id="@+id/mHarga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="20.000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginRight="4dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/location_secone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:text="Jalan samratulangi no.12 Rt.24 kel.siolali Wonosobo."/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:elevation="2dp"
+                android:gravity="center|left"
+                android:background="#FFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:src="@drawable/example"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="1dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kerajinan tangan sivenir dari BOTOL BEKAS PKK."
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#1a1a1a"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                     android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="Rp "/>
+
+                    <TextView
+                        android:textColor="@color/red_slow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:text="20.000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginRight="4dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/location_secone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:text="Jalan samratulangi no.12 Rt.24 kel.siolali Wonosobo."/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/poin_trash_app.iml" filepath="$PROJECT_DIR$/poin_trash_app.iml" />
-      <module fileurl="file://G:\Pemrograman\pointrash\poin_trash_app_2018.iml" filepath="G:\Pemrograman\pointrash\poin_trash_app_2018.iml" />
-      <module fileurl="file://E:\BRITECH\Android\poin_trash_app_2018\pointrash.iml" filepath="E:\BRITECH\Android\poin_trash_app_2018\pointrash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poin_trash_app_2018.iml" filepath="$PROJECT_DIR$/poin_trash_app_2018.iml" />
     </modules>
   </component>
 </project>

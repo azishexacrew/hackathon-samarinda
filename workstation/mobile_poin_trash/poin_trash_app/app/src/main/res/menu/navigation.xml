@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/navigation_cek_tagihan"
+        android:icon="@drawable/menu"
+
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/navigation_layanan_pengaduan"
+        android:icon="@drawable/location"
+
+        android:title="Take Foto" />
+
+    <item
+        android:id="@+id/navigation_daftar_baru"
+        android:icon="@drawable/ms_profile"
+
+        android:title="Profil" />
+
+    <item
+        android:id="@+id/navigation_maps"
+        android:icon="@drawable/help"
+        android:title="Informasi" />
+
+</menu>

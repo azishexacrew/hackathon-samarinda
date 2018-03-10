@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="csrf-token">
+    <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}">
     <title></title>
-    <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css') }}">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
   </head>
   <body>
     @yield('konten')
-    {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -11,8 +11,16 @@
 </head>
 <body>
     <div id="app">
-        <login-component></login-component>    
+        <v-app>
+        <app-tool></app-tool>
+        <v-content app>
+            <v-container fill-height grid-list-md>
+                <router-view></router-view>
+            </v-container> 
+        </v-content>
+        </v-app>
     </div>
+
     <script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>

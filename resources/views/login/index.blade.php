@@ -11,12 +11,12 @@
 			</div>
 			<div class="panel-body">
 				<div class="row">
-					@if ($errors->all())
+					@if (request('note') == 'gagal')
 						<div class="alert alert-dismissible alert-danger col-sm-offset-3 col-sm-6">
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>
 						  <strong>Login Gagal
 						</div>
-					@elseif(session()->get('note') == 'berhasil')
+					@elseif(request('note') == 'berhasil')
 						<div class="alert alert-dismissible alert-success col-sm-offset-3 col-sm-6">
 						  <button type="button" class="close" data-dismiss="alert">&times;</button>
 						  <strong>Login Berhasil

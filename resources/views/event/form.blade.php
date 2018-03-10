@@ -52,31 +52,6 @@
 				<label for="">harga</label>
 				<input type="text" class="form-control" name="" value="">
 			</div>
-	  	{{-- <div class="form-group col-sm-6">
-	  		<label for="jenis_tenant">Jenis Tenant</label>
-	  		<div class="checkbox">
-			 <label><input type="checkbox" name="jenis1" value="UKM">UKM</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis2" value="Usaha Kreatif">Usaha Kreatif</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="Makanan">Makanan</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Minuman</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Merchandise</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Fashion</label>
-			</div>
-			<div class="checkbox">
-			 <label><input type="checkbox" name="jenis" value="">Lainnya</label>
-			</div>
-
-	  	</div> --}}
   	</div>
  	<div class="form-group">
     	<label for="no_rek">Nomor Rekening</label>

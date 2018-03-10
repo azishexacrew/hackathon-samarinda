@@ -25,6 +25,12 @@ class EventController extends Controller
       return view('event.form',compact('kec'));
     }
 
+    public function edit($id){
+      $event = Event::find($id);
+
+      return view('event.detail',compact('event'));
+    }
+
     public function generate(){
       $kunci = request('kunci');
       return view('event.generate',compact('kunci'));

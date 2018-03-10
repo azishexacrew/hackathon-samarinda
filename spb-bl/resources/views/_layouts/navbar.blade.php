@@ -11,25 +11,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#"><i class="fa fa-home fa-fw"></i></a>
+                            <a class="nav-link active" href="{{ url('/') }}"><i class="fa fa-home fa-fw"></i></a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data Master&nbsp;</a>
+                        {{-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tenant&nbsp;</a>
                             <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                            {{-- <a class="dropdown-item" href="#">Pegawai</a>
-                            <a class="dropdown-item" href="#">Bidang</a>
-                            <a class="dropdown-item" href="#">Bendahara</a>
-                            <a class="dropdown-item" href="#">DPA</a>
-                            <a class="dropdown-item" href="#">KPA</a>
-                            <a class="dropdown-item" href="#">PPTK</a>
-                            <a class="dropdown-item" href="#">Rekanan</a> --}}
+                              <a class="dropdown-item" href="#">Tenant</a>
                             </div>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('tenant') }}">Tenant</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
+                            <a class="nav-link" href="{{ url('tenant') }}">Laporan</a>
                         </li>
                     </ul>
 

@@ -12,11 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/util.css') }}" rel="stylesheet">
     @yield('script-top')
 </head>
 <body>
         @include('_layouts.navbar')
-        <div class="clearfix"></div>
+        
         @yield('content')
 
     <!-- Scripts -->

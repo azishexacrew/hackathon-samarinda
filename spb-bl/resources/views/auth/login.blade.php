@@ -19,12 +19,14 @@
   <div id="particles-js"></div>
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-35 p-b-25">
 			<form class="login100-form validate-form" method="post" action="{{ route('login') }}">
-					<span class="login100-form-title p-b-33">
+          <div class="text-center">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo S.E-Ret System" width="100">
+          </div>
+					<span class="login100-form-title m-t-10 p-b-33">
 						S.E-Ret System
 					</span>
-          <small></small>
 				{{ csrf_field() }}
 				@if($errors->any())
 				<div class="alert alert-danger text-center" role="alert">

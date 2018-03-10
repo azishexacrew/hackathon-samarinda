@@ -27,6 +27,10 @@ Route::group(['prefix'=>'pemilik','as' => 'webpemilik::','middleware' => ['auth'
   Route::get('/', function () {
       return view('home');
   });
+  Route::resource('tenant', 'PemilikTenantController');
+  Route::resource('penyewa', 'PenyewaController');
+  Route::resource('sewa', 'SewaController');
+
 });
 
 Route::group(['prefix'=>'sitemanager','as' => 'web::','middleware' => ['auth','superadmin']], function(){

@@ -88,6 +88,7 @@ class PemilikController extends Controller
       $pemilik = new Pemilik;
 
       $pemilik->nama = request('nama');
+      $pemilik->kode = str_random(5);
       $pemilik->no_telp = request('no_telp');
       $pemilik->alamat = request('alamat');
       $pemilik->jk = request('jk');

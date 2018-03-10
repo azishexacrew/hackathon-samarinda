@@ -13,8 +13,6 @@
 
 Route::get('/', 'LandingController@index');
 
-// Route::get('profile','ProfileController@index');
-
 Route::get('provinsi','LandingController@provinsi');
 
 
@@ -31,3 +29,9 @@ Route::resource('event','EventController');
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
+
+Route::resource('registerr','RegisterController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -2,13 +2,14 @@
 
 @section('tubuh')
 <div class="container-fluid text-center">
-		<div class="row"> 
-			<form>
+		<div class="row">
+			<form action="{{route('registerr.store')}}" method="post">
+				{{ csrf_field() }}
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			  <div class="h2">Buat Akun</div>
 			</div>
-			<div class="panel-body">	
+			<div class="panel-body">
 				<div class="form-group col-sm-4 col-sm-offset-4" id="user-icon">
 					<i class="fas fa-user fa-5x"></i>
 				</div>

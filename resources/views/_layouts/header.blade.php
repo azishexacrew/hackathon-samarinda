@@ -21,7 +21,8 @@
         <li><a href="#">Manage Tenant </a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="{{route('registerr.index')}}">Register</a> </li>
       </ul>
     </div>
   </div>

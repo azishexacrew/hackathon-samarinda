@@ -18,13 +18,9 @@ Route::get('kecamatan','KecamatanController@index');
 
 Route::get('tenant','TenantController@konfirmasi');
 
-Route::get('tenant/konfirmasi','TenantController@konfirmasi');
-
-Route::get('event/generate',function(){
-	return view('event.generate');
-});
 
 Route::group(['middleware' => 'masuk'],function(){
+  Route::get('event/generate','EventController@generate');
   Route::resource('event','EventController');
 });
 
@@ -33,8 +29,7 @@ Route::get('personalisasi',function(){
 	return view('personalisasi.index');
 });
 
-
-  Route::resource('registerr','RegisterController');
+Route::resource('registerr','RegisterController');
 
 
 Auth::routes();

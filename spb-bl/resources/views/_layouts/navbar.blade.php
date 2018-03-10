@@ -23,14 +23,21 @@
                             <a class="nav-link" href="{{ url('tenant') }}">Tenant</a>
                         </li>
                         @if(Auth::check())
+                          @if(Auth::user()->level == 'SuperAdmin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('tenant') }}">Laporan</a>
+                            </li>
+                          @endif
+                          @if(Auth::user()->level == 'Pemilik')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('pemilik/penyewa') }}">Penyewa</a>
+                            </li>
+                          @endif
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('tenant') }}">Laporan</a>
-                        </li>
-                      @endif
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -39,12 +46,16 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         @else
+                          @if(Auth::user()->level == 'SuperAdmin')
+
                           <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-square"></i> &nbsp;Pemilik&nbsp;</a>
                               <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <a class="dropdown-item" href="{{ url('pemilik') }}">Buat Data</a>
+                                <a class="dropdown-item" href="{{ url('sitemanager/data-pemilik') }}">Buat Data</a>
                               </div>
                           </li>
+
+                        @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Welcome, {{ Auth::user()->name }} <span class="caret"></span>

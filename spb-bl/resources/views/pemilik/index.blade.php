@@ -27,7 +27,7 @@
                        </div>
                       </div>
                     <div class="pull-right" style="margin-bottom:15px;">
-                          <a href="{{ route('web::pemilik.create') }}" class="btn btn-info"><i class="fa fa-plus fa-fw"></i> Tambah</a>
+                          <a href="{{ route('web::data-pemilik.create') }}" class="btn btn-info"><i class="fa fa-plus fa-fw"></i> Tambah</a>
                       </div>
                       <table class="table table-bordered table-condensed table-hover" style="font-size:12px;">
                           <thead>
@@ -60,8 +60,8 @@
                                 <td>{{ $item->no_identitas }}</td>
                                 <td class="td-actions">
                                     <center>
-                                        <a href="{{ route('web::pemilik.edit',$item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"> </i></a>
-                                        <a href="{{ route('web::pemilik.destroy', $item->id) }}" data-method="DELETE" data-confirm="Apakah anda yakin akan menghapus data pemilik : {{ $item->nama}} ?" class="btn btn-danger btn-sm"><i class="fa fa-close"> </i></a>
+                                        <a href="{{ route('web::data-pemilik.edit',$item->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"> </i></a>
+                                        <a href="{{ route('web::data-pemilik.destroy', $item->id) }}" data-method="DELETE" data-confirm="Apakah anda yakin akan menghapus data pemilik : {{ $item->nama}} ?" class="btn btn-danger btn-sm"><i class="fa fa-close"> </i></a>
                                     </center>
                                 </td>
                               </tr>

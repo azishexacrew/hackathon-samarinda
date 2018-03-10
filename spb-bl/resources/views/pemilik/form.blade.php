@@ -126,7 +126,7 @@
                       <div class="pull-right">
                           <div class="form-group">
                               <button type="submit" class="btn btn-success" type="submit"><i class="fa fa-save fa-fw"></i> Simpan</button>&nbsp;&nbsp;
-                              <a href="{{ route('web::pemilik.index') }}" class="btn btn-warning"><i class="fa fa-reply fa-fw"></i> Kembali</a>
+                              <a href="{{ route('web::data-pemilik.index') }}" class="btn btn-warning"><i class="fa fa-reply fa-fw"></i> Kembali</a>
                           </div>
                       </div>
                   </form>

@@ -51,7 +51,7 @@ class PemilikController extends Controller
           }
       }
       $active = 'pemilik';
-      $action = route('web::pemilik.' . ($id ? 'update' : 'store'), $id);
+      $action = route('web::data-pemilik.' . ($id ? 'update' : 'store'), $id);
       $method = $id ? 'PUT' : 'POST';
       return view('pemilik.form' , compact('active','action','method'));
   }
@@ -98,7 +98,7 @@ class PemilikController extends Controller
 
       $pemilik->save();
 
-      return redirect(route('web::pemilik.index'));
+      return redirect(route('web::data-pemilik.index'));
 
   }
 
@@ -106,6 +106,6 @@ class PemilikController extends Controller
   {
       $pemilik = Pemilik::find($id);
       $pemilik->delete();
-      return redirect(route('web::pemilik.index'));
+      return redirect(route('web::data-pemilik.index'));
   }
 }

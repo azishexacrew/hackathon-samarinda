@@ -13,14 +13,28 @@
 
 Auth::routes();
 
+
 Route::get('tenant', 'TenantController@index');
 
-Route::group(['as' => 'web::','middleware' => 'auth'], function(){
-    Route::get('/', function () {
-        return view('home');
-    });
-    Route::get('dashboard', function () {
-        return view('home');
-    });
-    Route::resource('pemilik', 'PemilikController');
+Route::group(['middleware' => 'auth'], function(){
+  Route::get('/', function () {
+      return view('home');
+  });
+});
+
+
+Route::group(['prefix'=>'pemilik','as' => 'webpemilik::','middleware' => ['auth','pemilik']], function(){
+  Route::get('/', function () {
+      return view('home');
+  });
+});
+
+Route::group(['prefix'=>'sitemanager','as' => 'web::','middleware' => ['auth','superadmin']], function(){
+  Route::get('/', function () {
+    return view('home');
+  });
+  Route::get('dashboard', function () {
+    return view('home');
+  });
+  Route::resource('data-pemilik', 'PemilikController');
 });

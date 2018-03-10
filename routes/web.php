@@ -12,6 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard.index');
+    return view('landing.index');
 });
+
+Route::get('/profile',function(){
+	return view('profile.index');
+});
+
+
 

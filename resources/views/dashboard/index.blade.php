@@ -1,5 +1,7 @@
-@extends('_layouts.default')
+@extends('_layouts.default)
 
 @section('tubuh')
-<h2>ini bagian tubuh</h2>
+<div class="container-fluid">
+	<div class="h1">Tengger</div>
+</div>
 @endsection

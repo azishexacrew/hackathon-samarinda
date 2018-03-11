@@ -24,6 +24,13 @@ class TenantController extends Controller
       return view('tenant.konfirmasi');
     }
 
+    public function detail (){
+      $id = request('tenant_id');
+      $tenant = Tenant::find($id);
+      $kec = $this->kecamatan->index() ;
+      return view('tenant.detail',compact('tenant','kec'));
+    }
+
     public function store(){
       $tenant = new Tenant;
 
@@ -45,7 +52,7 @@ class TenantController extends Controller
       $tenant->save();
 
       if ($tenant) {
-        return redirect()->route('tenant.konfirmasi');
+        return redirect()->route('tenant.konfirmasi',['tenant_id' => $tenant->id]);
       }
     }
 }

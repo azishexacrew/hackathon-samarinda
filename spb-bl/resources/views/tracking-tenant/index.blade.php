@@ -134,6 +134,11 @@
                               <td>{{ $item->pemilik->nama }}</td>
                             </tr>
                             <tr>
+                              <td>Total Pembayaran</td>
+                              <td>:</td>
+                              <td>{{ $item->tenant->harga + $item->tenant->harga * 0.02 }}</td>
+                            </tr>
+                            <tr>
                               <td>Bank</td>
                               <td>:</td>
                               <td>{{ $item->pemilik->bank }}</td>

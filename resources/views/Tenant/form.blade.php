@@ -36,7 +36,7 @@
 		</div>
 		<div class="form-group">
 	    <label for="deskripsi_event">Kontak</label>
-	    <textarea type="text" class="form-control" name="kontak" id="deskripsi_event"></textarea>
+	    <input type="text" class="form-control" name="kontak" id="nama_event" >
   	</div>
   	<div class="form-group">
 	    <label for="alamat_event">Alamat Tenant</label>

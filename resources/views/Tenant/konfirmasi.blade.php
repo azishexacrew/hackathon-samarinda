@@ -12,7 +12,7 @@
     <br>
     <div class="row">
       <div class="text-center">
-        <a href="#" class="btn btn-success btn-lg" >Lihat Informasi Tenant</a>
+        <a href="{{route('tenant.detail',['tenant_id'=>request('tenant_id')])}}" class="btn btn-success btn-lg" >Lihat Informasi Tenant</a>
       </div>
     </div>
     <div class="row" style="margin-top:30px">

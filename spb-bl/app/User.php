@@ -27,8 +27,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function daftarpemain()
-    {
-      return $this->belongsTo(\App\PemilikTenant::class);
-    }
 }

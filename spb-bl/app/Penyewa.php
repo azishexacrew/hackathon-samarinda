@@ -12,4 +12,5 @@ class Penyewa extends Model
     {
       return $this->belongsTo(\App\Sewa::class);
     }
+
 }

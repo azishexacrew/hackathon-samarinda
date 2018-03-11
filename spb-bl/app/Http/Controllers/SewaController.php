@@ -81,13 +81,15 @@ class SewaController extends Controller
           'penyewa_id' => 'required',
           'tenant_id' => 'required',
       ]);
+
       $user = Auth::user();
+      $pemilik = Pemilik::where('user_id',$user->id)->first();
 
       $sewa->kode = str_random(5);
       $sewa->awal = Carbon::createFromFormat('d/m/Y', request('awal'))->format('Y-m-d');
       $sewa->akhir = Carbon::createFromFormat('d/m/Y', request('akhir'))->format('Y-m-d');
       $sewa->lama = request('lama');
-      $sewa->pemilik_id = $user->id;
+      $sewa->pemilik_id = $pemilik->id;
       $sewa->penyewa_id = request('penyewa_id');
       $sewa->tenant_id = request('tenant_id');
 

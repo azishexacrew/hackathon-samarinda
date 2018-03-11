@@ -10,7 +10,12 @@ class Sewa extends Model
 
     public function pemilik()
     {
-      return $this->belongsTo(\App\User::class);
+      return $this->belongsTo(\App\Pemilik::class);
+    }
+
+    public function pemiliku()
+    {
+      return $this->belongsTo(\App\Pemilik::class);
     }
 
     public function tenant()

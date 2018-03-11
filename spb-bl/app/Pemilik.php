@@ -12,4 +12,5 @@ class Pemilik extends Model
     {
       return $this->belongsTo(\App\Sewa::class);
     }
+
 }

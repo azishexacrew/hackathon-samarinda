@@ -56,6 +56,7 @@ class TenantController extends Controller
           $sewa->where('kode','LIKE', $term);
       }
       $sewa = $sewa->paginate(1);
+      // return $sewa;
 
      return view('tracking-tenant.index', compact('sewa','term'));
     }

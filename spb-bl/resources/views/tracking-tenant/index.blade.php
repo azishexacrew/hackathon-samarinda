@@ -36,7 +36,7 @@
 
             <div class="row text-center">
               <div class="col-sm-6">
-                <a href="" data-toggle="modal" data-target="#myModal">
+                <a href="" data-toggle="modal" data-target="#modalStatus">
                   <div class="card text-white bg-info mb-3" >
                     <div class="card-body">
                       <h1 class="card-title"><i class="fa fa-list-alt"></i></h1>
@@ -46,7 +46,7 @@
                 </a>
               </div>
               <div class="col-sm-6">
-                <a href="">
+                <a href="" data-toggle="modal" data-target="#modalPembayaran">
                   <div class="card text-white bg-info mb-3" >
                     <div class="card-body">
                       <h1 class="card-title"><i class="fa fa-money"></i></h1>
@@ -57,7 +57,10 @@
               </div>
             </div>
 
-            <div class="modal fade" id="myModal">
+            <!-- Modal Status -->
+
+
+            <div class="modal fade" id="modalStatus">
               <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -95,6 +98,55 @@
                               <td>Lokasi</td>
                               <td>:</td>
                               <td>Citra Niaga</td>
+                            </tr>
+                        </thead>
+                    </table>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal Pembayaran -->
+
+            <div class="modal fade" id="modalPembayaran">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Info & Status : <u>{{ $item->kode }}</u></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <table class="table table-condensed table-sm">
+                        <thead>
+                            <tr>
+                              <td>Nama Pemilik</td>
+                              <td>:</td>
+                              <td>{{ $item->pemilik->nama }}</td>
+                            </tr>
+                            <tr>
+                              <td>Bank</td>
+                              <td>:</td>
+                              <td>{{ $item->pemilik->bank }}</td>
+                            </tr>
+                            <tr>
+                              <td>No. Rekening</td>
+                              <td>:</td>
+                              <td>{{ $item->pemilik->no_rek }}</td>
+                            </tr>
+                            <tr>
+                              <td>Status</td>
+                              <td>:</td>
+                              <td><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-close fa-fw"></i> Belum Dibayar</button> </td>
                             </tr>
                         </thead>
                     </table>

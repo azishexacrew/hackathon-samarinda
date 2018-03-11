@@ -19,11 +19,11 @@
                               <a class="dropdown-item" href="#">Tenant</a>
                             </div>
                         </li> --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
-                        </li>
                         @if(Auth::check())
                           @if(Auth::user()->level == 'SuperAdmin')
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
                             </li>
@@ -32,6 +32,12 @@
                             </li>
                           @endif
                           @if(Auth::user()->level == 'Pemilik')
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ url('pemilik/tenant') }}"><i class="fa fa-plus-square fa-fw"></i> Buat Tenant</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-square fa-fw"></i> Penyewa&nbsp;</a>
                                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">

@@ -1,5 +1,6 @@
 package com.trash.poin.poin_trash.service;
 
+import com.trash.poin.poin_trash.model.ResponseBankSampah;
 import com.trash.poin.poin_trash.model.ResponseResetPassword;
 import com.trash.poin.poin_trash.model.ResponseToken;
 import com.trash.poin.poin_trash.model.ResponseUser;
@@ -29,7 +30,7 @@ public interface ApiEndpointService {
 
     @FormUrlEncoded
     @POST("users")
-    Call<ResponseUser> registerUser(@Field("email") String kontak, @Field("name") String nama, @Field("email") String email, @Field("alamat") String alamat, @Field("password") String password,
+    Call<ResponseUser> registerUser(@Field("kontak") String kontak, @Field("name") String nama, @Field("email") String email, @Field("alamat") String alamat, @Field("password") String password,
                                     @Field("password_confirmation") String password_confirmation);
 
     @FormUrlEncoded
@@ -57,4 +58,7 @@ public interface ApiEndpointService {
     @FormUrlEncoded
     @POST("token_device")
     Call<ResponseUser> setTokenDevice(@Header("Authorization") String token, @Field("token_device") String token_device);
+
+    @GET("bank_sampahs")
+    Call<ResponseBankSampah>getBankSampah();
 }

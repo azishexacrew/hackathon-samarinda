@@ -19,7 +19,7 @@ import com.trash.poin.poin_trash.config.Const;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BerandaFragment extends Fragment {
+public class BerandaFragment extends BaseFragmentBottomNavigation {
 
     LinearLayout btnsetor_sampah,btnmarket,btnnews;
 
@@ -43,11 +43,17 @@ public class BerandaFragment extends Fragment {
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
-        Fragment demoFragment = Fragment.instantiate(getActivity(), LoopViewPagerSlideHomeFragment.class.getName());
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, demoFragment);
-        fragmentTransaction.commit();
+//        Fragment demoFragment = Fragment.instantiate(getActivity(), LoopViewPagerSlideHomeFragment.class.getName());
+//        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.frame, demoFragment);
+//        fragmentTransaction.commit();
+
+        Bundle bundle = new Bundle();
+        LoopViewPagerSlideHomeFragment fragmentInfoConfirmation = new LoopViewPagerSlideHomeFragment();
+        fragmentInfoConfirmation.setArguments(bundle);
+        getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).replace(R.id.frame, fragmentInfoConfirmation).addToBackStack(null).commitAllowingStateLoss();
         initial(v);
+
         return v;
     }
 

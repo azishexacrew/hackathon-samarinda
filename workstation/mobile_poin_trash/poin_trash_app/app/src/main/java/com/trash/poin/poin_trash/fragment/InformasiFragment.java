@@ -10,15 +10,7 @@ import android.view.ViewGroup;
 
 import com.trash.poin.poin_trash.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link InformasiFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link InformasiFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class InformasiFragment extends Fragment {
+public class InformasiFragment extends BaseFragmentBottomNavigation {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,5 +56,13 @@ public class InformasiFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_informasi, container, false);
+    }
+
+    public static InformasiFragment newInstance(int index) {
+        InformasiFragment fragment = new InformasiFragment();
+        Bundle b = new Bundle();
+        b.putInt("index", index);
+        fragment.setArguments(b);
+        return fragment;
     }
 }

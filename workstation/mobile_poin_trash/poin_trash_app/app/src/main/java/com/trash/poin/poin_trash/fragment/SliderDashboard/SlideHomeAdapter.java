@@ -29,7 +29,7 @@ public class SlideHomeAdapter extends PagerAdapter
     public SlideHomeAdapter(Context context)
     {
         this.context=context;
-        mSize = 5;
+        mSize = 4;
     }
 
     public SlideHomeAdapter(int count)
@@ -61,14 +61,14 @@ public class SlideHomeAdapter extends PagerAdapter
         final ImageView imageView = new ImageView(view.getContext());
         //final WebView webview = new WebView(view.getContext());
 
-        final String[] myUrl = new String[]{
+         final String[] myUrl = new String[]{
                 context.getResources().getString(R.string.url_base) + "image/a.png",
                 context.getResources().getString(R.string.url_base) + "image/b.png",
                 context.getResources().getString(R.string.url_base) + "image/c.png",
                 context.getResources().getString(R.string.url_base) + "image/d.png"};
 
         Picasso.with(context).load(String.valueOf(myUrl[position])).fit()
-                .placeholder(R.drawable.iklan).error(R.drawable.iklan)
+                .placeholder(R.drawable.a).error(R.drawable.a)
                 .into(imageView);
 
         view.addView(imageView);

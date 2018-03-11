@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.trash.poin.poin_trash.R;
@@ -206,6 +207,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void startMainActivity() {
+        //Toast.makeText(context, "berhasil", Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(Login.this,Dashboard.class);
         startActivity(intent);
     }

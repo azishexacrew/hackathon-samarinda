@@ -105,7 +105,7 @@ public class Registrasi extends AppCompatActivity {
 
                             new SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Pendaftaran Berhasil")
-                                    .setContentText("Silahkan login dengan NIK dan Password anda")
+                                    .setContentText("Silahkan login dengan Email dan Password anda")
                                     .setConfirmText("Tutup")
                                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                         @Override

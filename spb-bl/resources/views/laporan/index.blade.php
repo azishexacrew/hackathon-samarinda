@@ -5,6 +5,7 @@
 @endsection
 
 @section('script-bottom')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -13,6 +14,40 @@
         allowClear: true
       });
     });
+  </script>
+  <script type="text/javascript">
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Total Tenan", "Disewa", "Tersedia"],
+          datasets: [{
+              label: '# Grafik Jumlah Tenant',
+              data: [500, {{ count($apiCitra['data']) }}, {{ 500 - count($apiCitra['data']) }}],
+              backgroundColor: [
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(255, 152, 0, 0.6)',
+                  'rgba(229, 28, 35, 0.6)',
+              ],
+              borderColor: [
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 152, 0, 1)',
+                  'rgba(229, 28, 35, 1)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
   </script>
 @endsection
 
@@ -42,6 +77,10 @@
           </form>
           </div>
         </div>
+        {{-- <div style="width:75%;">
+            {!! $chartjs->render() !!}
+        </div> --}}
+
 
         <div class="row m-t-40">
 
@@ -50,34 +89,34 @@
             <hr>
           </div>
 
-          <div class="row text-center">
-            <div class="col-sm-4">
+          <div class="row  text-center" style="margin-left:260px;">
+            <div class="col-sm-12">
               <a href="" data-toggle="modal" data-target="#modalStatus">
                 <div class="card text-white bg-info mb-3" >
                   <div class="card-body">
-                    <h4 class="card-title">500</h4>
+                    <h4 class="card-title"><i class="fa fa-flag fa-fw"></i> 500</h4>
                     <h5 class="card-title">Total Tenant</h5>
                   </div>
                 </div>
               </a>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <a href="" data-toggle="modal" data-target="#modalPembayaran">
                 <div class="card text-white bg-info mb-3" >
                   <div class="card-body">
-                    <h4 class="card-title">{{ count($apiCitra['data']) }}</h4>
+                    <h4 class="card-title"><i class="fa fa-window-close fa-fw"></i> {{ count($apiCitra['data']) }}</h4>
                     <h5 class="card-title">Total Yang Disewa</h5>
                   </div>
                 </div>
               </a>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <a href="" data-toggle="modal" data-target="#modalPembayaran">
                 <div class="card text-white bg-info mb-3" >
                   <div class="card-body">
-                    <h4 class="card-title">{{ 500 - count($apiCitra['data']) }}</h4>
+                    <h4 class="card-title"><i class="fa fa-check-square fa-fw"></i> {{ 500 - count($apiCitra['data']) }}</h4>
                     <h6 class="card-title">Total Yang Tersedia</h6>
                   </div>
                 </div>
@@ -111,6 +150,16 @@
                 </div>
               </div>
             </a>
+          </div>
+
+
+          <div class="col-md-12 m-t-40 text-center">
+            <h3>Grafik</h3>
+            <hr>
+          </div>
+
+          <div class="row">
+            <canvas id="myChart" width="400" height="130"></canvas>
           </div>
 
           {{-- @foreach($apiCitra['data'] as $item)

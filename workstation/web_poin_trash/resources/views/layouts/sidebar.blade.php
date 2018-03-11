@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="http://Rifan.britech.id/image/a.png" class="img-rounded"
+                <img src="http://rifan.britech.id/image/a.png" class="img-rounded"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">

@@ -72,6 +72,8 @@ class PemilikController extends Controller
           'tmpt_lahir' => 'required',
           'tgl_lahir' => 'required',
           'no_identitas' => 'required',
+          'bank' => 'required',
+          'no_rek' => 'required',
           'name' => 'required|string|max:255',
           'email' => 'required|string|email|max:255|unique:users',
           'password' => 'required|string|min:6|confirmed',
@@ -95,6 +97,8 @@ class PemilikController extends Controller
       $pemilik->tmpt_lahir = request('tmpt_lahir');
       $pemilik->tgl_lahir = request('tgl_lahir');
       $pemilik->no_identitas = request('no_identitas');
+      $pemilik->bank = request('bank');
+      $pemilik->no_rek = request('no_rek');
       $pemilik->user_id = $user->id;
 
       $pemilik->save();

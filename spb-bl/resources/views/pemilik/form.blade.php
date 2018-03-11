@@ -71,6 +71,27 @@
                           </div>
                       </div>
 
+                      <div class="form-group">
+                          <label class="control-label" for="bank">Bank</label>
+                          <div class="controls">
+                            <select class="form-control" name="bank" id="bank">
+                              <option value="N">Pilih Bank</option>
+                              <option value="Bank A">Bank A</option>
+                              <option value="Bank B">Bank B</option>
+                              <option value="Bank C">Bank C</option>
+                              <option value="Bank D">Bank D</option>
+                              <option value="Bank E">Bank E</option>
+                            </select>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="control-label" for="no_rek">Nomor Rekening</label>
+                          <div class="controls">
+                              <input type="text" name="no_rek" placeholder="Nomor Rekening" class="form-control" id="no_rek" value="{{ old('no_rek') }}">
+                          </div>
+                      </div>
+
                       @csrf
 
                       <div class="form-group">

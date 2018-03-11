@@ -13,11 +13,13 @@
 
 Route::get('/', 'LandingController@index')->name('landingpage');
 
-Route::get('tenant\konfirmasi','TenantController@konfirmasi');
-Route::resource('tenant','TenantController');
 
-Route::get('event/genereate','EventController@generate')->name('event.generate');
-Route::resource('event','EventController');
+Route::group(['middleware' => 'masuk'],function(){
+  Route::get('tenant\konfirmasi','TenantController@konfirmasi')->name('tenant.konfirmasi');
+  Route::resource('tenant','TenantController');
+  Route::get('event/genereate','EventController@generate')->name('event.generate');
+  Route::resource('event','EventController');
+});
 
 Route::get('personalisasi',function(){
 	return view('personalisasi.index');

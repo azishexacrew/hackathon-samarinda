@@ -46,9 +46,11 @@ class EventController extends Controller
       $event->bentuk_tenant = request('bentuk_tenant');
       $event->rekening = request('rekening');
       $event->nama_rekening = request('nama_rekening');
+      $event->kategori = request('kategori');
+      $event->harga = request('harga');
 
       if (request()->file('gambar')) {
-        @unlink(public_path('image/' . $event->foto));
+        @unlink(public_path('image/' . $event->gambar));
           $file           = request()->file('gambar');
           $extension      = $file->getClientOriginalExtension();
           $fileName       = str_random(8) . '.' . $extension;

@@ -25,6 +25,27 @@ class TenantController extends Controller
     }
 
     public function store(){
-      return request('nama');
+      $tenant = new Tenant;
+
+      $tenant->nama = request('nama');
+      $tenant->penjelasan = request('penjelasan');
+      $tenant->kecamatan = request('kecamatan');
+      $tenant->alamat = request('alamat');
+      $tenant->kontak = request('kontak');
+
+      if (request()->file('gambar')) {
+        @unlink(public_path('image/' . $tenant->gambar));
+          $file           = request()->file('gambar');
+          $extension      = $file->getClientOriginalExtension();
+          $fileName       = str_random(8) . '.' . $extension;
+          request()->file('gambar')->move("image/", $fileName);
+          $tenant->gambar    = $fileName;
+      }
+
+      $tenant->save();
+
+      if ($tenant) {
+        return redirect()->route('tenant.konfirmasi');
+      }
     }
 }

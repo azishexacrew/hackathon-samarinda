@@ -26,6 +26,8 @@ class CreateEventTable extends Migration
          $table->string('rekening')->nullable();
          $table->string('nama_rekening')->nullable();
          $table->string('gambar')->nullable();
+         $table->string('kategori')->nullable();
+         $table->integer('harga')->nullable();
          $table->timestamps();
      });
     }

@@ -38,7 +38,7 @@ class RegisterController extends Controller
 
       if ($user) {
         session()->put('note','berhasil');
-        return redirect()->route('loginn.index',['note' => true]);
+        return redirect()->route('loginn.index',['note' => 'berhasil']);
       }
 
       return redirect()->route('registerr.index',['note' => true]);

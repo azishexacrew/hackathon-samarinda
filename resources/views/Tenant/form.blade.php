@@ -34,6 +34,10 @@
 				@endfor
 			</select>
 		</div>
+		<div class="form-group">
+	    <label for="deskripsi_event">Kontak</label>
+	    <textarea type="text" class="form-control" name="kontak" id="deskripsi_event"></textarea>
+  	</div>
   	<div class="form-group">
 	    <label for="alamat_event">Alamat Tenant</label>
 	 	<textarea type="text" class="form-control" name="alamat" id="alamat_event"></textarea>

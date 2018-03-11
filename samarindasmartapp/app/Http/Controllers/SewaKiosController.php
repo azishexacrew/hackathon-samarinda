@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\SewaRuko;
-use App\Ruko;
+use App\SewaKios;
+use App\Kios;
 use Session;
 use Storage;
 use Image;
 use Purifier;
 
-class SewaRukoController extends Controller
+class SewaKiosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class SewaRukoController extends Controller
      */
     public function index()
     {
-        $sewaruko = SewaRuko::all();
-        return view('sewaRuko.index')->withSewaruko($sewaruko);
+        $sewakios = SewaKios::all();
+        return view('sewaKios.index')->withSewakios($sewakios);
     }
 
     /**
@@ -30,8 +30,8 @@ class SewaRukoController extends Controller
      */
     public function create()
     {
-        $sewaRuko = Ruko::all();
-        return view('sewaRuko.create')->withSewaRuko($sewaRuko);
+        $sewaKios = Kios::all();
+        return view('sewaKios.create')->withSewaKios($sewaKios);
     }
 
     /**
@@ -48,20 +48,20 @@ class SewaRukoController extends Controller
             'no_hp' => 'required',
             'jenis_usaha' => 'required',
             'periode_penyewaan' => 'required',
-            'ruko_id' => 'required|integer',
+            'kios_id' => 'required|integer',
             ));
 
-        $sewaruko = new SewaRuko;
-        $sewaruko->nama = $request->nama;
-        $sewaruko->alamat = $request->alamat;
-        $sewaruko->no_hp = $request->no_hp;
-        $sewaruko->jenis_usaha = $request->jenis_usaha;
-        $sewaruko->periode_penyewaan = $request->periode_penyewaan;
-        $sewaruko->ruko_id = $request->ruko_id;
+        $sewakios = new SewaKios;
+        $sewakios->nama = $request->nama;
+        $sewakios->alamat = $request->alamat;
+        $sewakios->no_hp = $request->no_hp;
+        $sewakios->jenis_usaha = $request->jenis_usaha;
+        $sewakios->periode_penyewaan = $request->periode_penyewaan;
+        $sewakios->kios_id = $request->kios_id;
 
-        $sewaruko->save();
+        $sewakios->save();
 
-        return redirect()->route('sewaRuko.show', $sewaruko->id);
+        return redirect()->route('sewaKios.show', $sewakios->id);
     }
 
     /**
@@ -72,8 +72,8 @@ class SewaRukoController extends Controller
      */
     public function show($id)
     {
-        $sewaruko = SewaRuko::find($id);
-        return view('sewaRuko.show')->withSewaruko($sewaruko);
+        $sewakios = SewaKios::find($id);
+        return view('sewaKios.show')->withSewakios($sewakios);
     }
 
     /**

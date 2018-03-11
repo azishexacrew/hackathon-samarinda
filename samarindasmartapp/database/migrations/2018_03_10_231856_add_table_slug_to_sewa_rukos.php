@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnToSewaRukos extends Migration
+class AddTableSlugToSewaRukos extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddColumnToSewaRukos extends Migration
     public function up()
     {
         Schema::table('sewa_rukos', function (Blueprint $table) {
-            // $table->string('jenis_usaha')->after('ruko_id');
-            // $table->string('periode_penyewaan');
+            // $table->string('slug')->unique()->after('jenis_usaha');
         });
     }
 

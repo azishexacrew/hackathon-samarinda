@@ -13,7 +13,6 @@
     <div id="app">
         <app-login></app-login>
     </div>
-
     <script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>

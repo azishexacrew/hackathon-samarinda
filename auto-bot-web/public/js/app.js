@@ -80055,18 +80055,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -80083,23 +80073,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 window.Vue = __webpack_require__(30);
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      headers: [{
-        text: 'Alamat TPS',
-        align: 'left',
-        sortable: false,
-        value: 'address'
-      }, { text: 'Kecamatan', value: 'kecamatan' }, { text: 'Kelurahan', value: 'kelurahan' }, { text: 'lat', value: 'lat' }, { text: 'lang', value: 'lng' }, { text: 'Action', sortable: false, value: 'action' }],
-      items: [{
-        value: false
-
-      }]
+      posts: [],
+      errors: []
     };
   },
-  mounted: function mounted() {
-    axios.get('api/data/tps').then(function (response) {
+  created: function created() {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/data/tps').then(function (response) {
       console.log(response);
     }).catch(function (error) {
       console.log(error);
@@ -80123,47 +80106,14 @@ var render = function() {
         "v-flex",
         { attrs: { xs12: "" } },
         [
-          _c(
-            "v-card",
-            { attrs: { flat: "", color: "transparet" } },
-            [
-              _c("v-data-table", {
-                staticClass: "elevation-1",
-                attrs: { headers: _vm.headers, items: _vm.items },
-                scopedSlots: _vm._u([
-                  {
-                    key: "items",
-                    fn: function(props) {
-                      return [
-                        _c("td", [_vm._v(_vm._s(props.item.address))]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.kecamatan))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.kelurahan))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.lat))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.lng))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-xs-left" }, [
-                          _vm._v(_vm._s(props.item.action))
-                        ])
-                      ]
-                    }
-                  }
-                ])
+          _c("v-card", { attrs: { flat: "", color: "transparet" } }, [
+            _c(
+              "ul",
+              _vm._l(_vm.posts, function(post) {
+                return _c("li", [_vm._v(_vm._s(post))])
               })
-            ],
-            1
-          )
+            )
+          ])
         ],
         1
       )

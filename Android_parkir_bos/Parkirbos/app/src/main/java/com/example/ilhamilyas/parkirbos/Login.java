@@ -3,6 +3,7 @@ package com.example.ilhamilyas.parkirbos;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -35,7 +36,7 @@ import java.util.List;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
- * A login screen that offers login via email/password.
+ * A login_activity screen that offers login_activity via email/password.
  */
 public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -52,7 +53,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             "foo@example.com:hello", "bar@example.com:world"
     };
     /**
-     * Keep track of the login task to ensure we can cancel it if requested.
+     * Keep track of the login_activity task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
 
@@ -61,32 +62,35 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    Button btnLogin ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        // Set up the login form.
+        setContentView(R.layout.login_layout_activity);
+        // Set up the login_activity form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
-                    return true;
-                }
-                return false;
-            }
-        });
+//        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+//                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+//                    attemptLogin();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+//                attemptLogin();
+                Intent login = new Intent(Login.this,Dashboard.class);
+                startActivity(login);
             }
         });
 
@@ -139,9 +143,9 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
 
     /**
-     * Attempts to sign in or register the account specified by the login form.
+     * Attempts to sign in or register the account specified by the login_activity form.
      * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
+     * errors are presented and no actual login_activity attempt is made.
      */
     private void attemptLogin() {
         if (mAuthTask != null) {
@@ -152,7 +156,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
-        // Store values at the time of the login attempt.
+        // Store values at the time of the login_activity attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
@@ -178,12 +182,12 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         }
 
         if (cancel) {
-            // There was an error; don't attempt login and focus the first
+            // There was an error; don't attempt login_activity and focus the first
             // form field with an error.
             focusView.requestFocus();
         } else {
             // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
+            // perform the user login_activity attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
@@ -201,7 +205,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     }
 
     /**
-     * Shows the progress UI and hides the login form.
+     * Shows the progress UI and hides the login_activity form.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
@@ -291,7 +295,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     }
 
     /**
-     * Represents an asynchronous login/registration task used to authenticate
+     * Represents an asynchronous login_activity/registration task used to authenticate
      * the user.
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {

@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Sign in</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings relatedlogin_activityogin -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -15,4 +15,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_dashboard">Dashboard</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tambah">Tambah</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_registrasi">Registrasi</string>
+    <string name="title_activity_menuregistrasi">Sign in</string>
 </resources>

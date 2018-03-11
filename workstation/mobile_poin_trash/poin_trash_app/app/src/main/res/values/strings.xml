@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">poin-trash</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_registrasi">Registrasi</string>
+    <string name="title_activity_splash_intro">SplashIntro</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ddd">ddd</string>
+    <string name="url_base">http://rifan.britech.id/</string>
+</resources>

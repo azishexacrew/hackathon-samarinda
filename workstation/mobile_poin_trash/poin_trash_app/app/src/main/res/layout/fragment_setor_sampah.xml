@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f7fbff"
+    tools:context="com.trash.poin.poin_trash.fragment.SetorSampahFragment">
+
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/list_setor_sampah"/>
+
+        <include layout="@layout/list_setor_sampah"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

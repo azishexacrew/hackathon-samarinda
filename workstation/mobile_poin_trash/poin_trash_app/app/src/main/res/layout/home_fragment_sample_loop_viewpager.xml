@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.trash.poin.poin_trash.fragment.SliderDashboard.LoopViewPagerHome
+        android:background="#FFF"
+        android:id="@id/viewpager"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/indicator" />
+
+    <com.trash.poin.poin_trash.fragment.SliderDashboard.CycleIndicatorSlideImageHome
+        android:id="@id/indicator"
+        android:layout_gravity="center|bottom"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
+        android:drawingCacheQuality="high"
+        android:layout_alignParentBottom="true" />
+</FrameLayout>

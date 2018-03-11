@@ -48,7 +48,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                            <li><a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in fa-fw"></i> Login</a></li>
                         @else
                           @if(Auth::user()->level == 'SuperAdmin')
 

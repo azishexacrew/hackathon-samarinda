@@ -17,6 +17,9 @@
 </head>
 <body>
   <div id="particles-js"></div>
+  <div class="cek-data" style="position:fixed;float:left;margin-left:0px;margin-top:55px;">
+    <a href="{{url('tenant')}}" class="btn btn-outline-primary hover-cek-data" style="color: #4272d7 !important; background:#fff !important;border-radius:0px !important;"><i class="fa fa-industry fa-fw"></i>&nbsp; Cek Data Tenant</a>
+  </div>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-35 p-b-25">

@@ -59,6 +59,10 @@ export default class Tracking extends Component {
   }
 
   componentDidMount(){
+    this.getData()
+  }
+
+  getData(){
     AsyncStorage.getItem('auth')
       .then((response) => {
         console.log("response", response);
@@ -71,7 +75,6 @@ export default class Tracking extends Component {
         this.getListReport(authData.data.id)
         this.getListTPS()
     });
-
   }
 
   setModalVisible(visible) {
@@ -134,7 +137,7 @@ export default class Tracking extends Component {
         this.setState({
           modalVisible : false
         })
-        this.getListReport()
+        this.getData()
       }
     })
   }
@@ -142,7 +145,7 @@ export default class Tracking extends Component {
   render() {
 
     const tpsItem = this.state.tps.map((result,id) => (
-      <Item label={ result.nama } value={ result.id } />
+      <Item key={id} label={ result.nama } value={ result.id } />
     ))
 
     if (this.state.isLoading) {
@@ -171,7 +174,7 @@ export default class Tracking extends Component {
                     <Picker
                         iosHeader="Select one"
                         mode="dropdown"
-                        selectedValue={this.state.selected1}
+                        selectedValue={this.state.pilihanJenis}
                         onValueChange={this.onValueChange.bind(this)}
                       >
                         <Item label="Kantong Plastik Uk 120 * 200 cm" value="Kantong Plastik Uk 120 * 200 cm" />

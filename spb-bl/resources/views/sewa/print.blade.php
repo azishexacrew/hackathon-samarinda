@@ -68,4 +68,10 @@
 
         </div>
     </body>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(window).on('load', function(){
+            window.print();
+        });
+    </script>
 </html>

@@ -48,6 +48,36 @@
       }
   });
 
+  var ctx = document.getElementById("myChart2");
+  var myChart2 = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ["Sudah Bayar", "Belum Bayar"],
+          datasets: [{
+              label: '# Grafik Jumlah Tenant',
+              data: [322, {{456-322}}],
+              backgroundColor: [
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(255, 152, 0, 0.6)',
+              ],
+              borderColor: [
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 152, 0, 1)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
   </script>
 @endsection
 
@@ -158,8 +188,13 @@
             <hr>
           </div>
 
-          <div class="row">
+          <div class="row" style="margin-left:150px;">
+            <div class="col-sm-6">
             <canvas id="myChart" width="400" height="130"></canvas>
+          </div>
+          <div class="col-sm-6">
+            <canvas id="myChart2" width="400" height="130"></canvas>
+          </div>
           </div>
 
           {{-- @foreach($apiCitra['data'] as $item)

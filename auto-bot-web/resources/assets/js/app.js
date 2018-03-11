@@ -14,14 +14,17 @@ let AppTool = require('./components/layout/ToolBar.vue');
 let appLogin = require('./components/login/Login.vue');
 let appMap = require('./components/map/Map.vue');
 let appLaporan = require('./components/laporan/Laporan.vue');
-let appPerson = require('./components/person/person.vue');
+let appPerson = require('./components/person/Person.vue');
+let appPembuangan = require('./components/pembuangan/Pembuangan.vue');
 
 
 const routes = [
     { path: '/', component: appHome },
     { path: '/map', component: appMap },
     { path: '/laporan', component: appLaporan },
-    { path: '/person', component: appPerson }
+    { path: '/person', component: appPerson },
+    { path: '/tps', component: appPembuangan },
+    
 ]
 
 const router = new VueRouter({
@@ -33,6 +36,11 @@ const app = new Vue({
     router,
     el: '#app',
     components:{
-        appHome,AppTool,appLogin,appMap
+        appHome,
+        AppTool,
+        appLogin,
+        appMap,
+        appPembuangan
     }
 });
+

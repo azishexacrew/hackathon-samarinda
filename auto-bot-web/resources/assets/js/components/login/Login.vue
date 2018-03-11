@@ -11,7 +11,6 @@
                     <v-card flat color="transparent">
                         <!-- title -->
                         <v-card-title primary-title>
-                           
                         </v-card-title>
                         <!-- from-content -->
                         <v-card-text>

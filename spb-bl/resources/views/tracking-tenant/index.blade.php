@@ -30,7 +30,7 @@
           <div class="col-md-12">
             <div class="alert alert-dismissible alert-info text-center">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>Kode Sewa : <u>{{$item->kode}}</u> Ditemukan!</strong>
+              <strong><i class="fa fa-check fa-fw"></i> Kode Sewa : <u>{{$item->kode}}</u> Ditemukan!</strong>
           </div>
 
 
@@ -63,13 +63,41 @@
 
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4 class="modal-title">Info & Status</h4>
+                    <h4 class="modal-title">Info & Status : <u>{{ $item->kode }}</u></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
-                    Modal body..
+                    <table class="table table-condensed table-sm">
+                        <thead>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>{{ $item->penyewa->nama }}</td>
+                            </tr>
+                            <tr>
+                              <td>Tenant</td>
+                              <td>:</td>
+                              <td>{{ $item->tenant->area }}</td>
+                            </tr>
+                            <tr>
+                              <td>Block - Nomor</td>
+                              <td>:</td>
+                              <td>{{ $item->tenant->blok }} &mdash; {{ $item->tenant->nomor }}</td>
+                            </tr>
+                            <tr>
+                              <td>Harga</td>
+                              <td>:</td>
+                              <td>Rp. {{ $item->tenant->harga }}</td>
+                            </tr>
+                            <tr>
+                              <td>Lokasi</td>
+                              <td>:</td>
+                              <td>Citra Niaga</td>
+                            </tr>
+                        </thead>
+                    </table>
                   </div>
 
                   <!-- Modal footer -->
@@ -83,11 +111,12 @@
 
         @empty
 
-          <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-            <div class="card-body text-center">
-              <h4 class="card-title">Kode Tidak Ditemukan</h4>
-            </div>
+          <div class="col-md-12">
+            <div class="alert alert-dismissible alert-danger text-center">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><i class="fa fa-exclamation-triangle fa-fw"></i> Kode Tidak Ditemukan!</strong>
           </div>
+
         @else
 
         @endif

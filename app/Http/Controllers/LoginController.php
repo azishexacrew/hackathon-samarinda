@@ -18,7 +18,7 @@ class LoginController extends Controller
     }
 
     public function store(){
-      if (Auth::attempt(['nama' => request('nama'),'password' => request('password')])) {
+      if (Auth::attempt(['username' => request('nama'),'password' => request('password')])) {
         return redirect()->route('landingpage');
       }else{
         // session()->put('note','gagal');

@@ -1,0 +1,22 @@
+<ion-menu [content]="content" id="myMenu">  
+  <ion-content>
+    <ion-item *ngIf="userProfile" style="height: 20%; background-color: #3b5998 !important; color: white">
+      <ion-avatar item-left>
+        <img [src]="userProfile.photoURL" style="height: 70px;width: 70px;">
+      </ion-avatar>
+      <h2>{{ userProfile.displayName }}</h2>
+      <hr>
+      <h3>{{ userProfile.email }}</h3>
+    </ion-item>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      <ion-footer>
+      <button ion-button full color="primary" (click)="signout()">Sign out</button>
+      </ion-footer>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,59 @@
+<ion-header color="primary">
+</ion-header>
+<ion-content padding no-bounce>
+  <ion-slides>
+    <ion-slide>
+      Hallo, we will help you to manage the wasted time, to be a more meaningful time
+    </ion-slide>
+    <ion-slide>
+      Of course you have to set everything to quickly reach the target instead, do it
+    </ion-slide>
+    <ion-slide>
+      Get ready
+    </ion-slide>
+  </ion-slides>
+  <h4 class="one" style="text-align: center;"><span>Continue with</span></h4>
+    <button (click)="login()" full ion-button color="light">
+      <ion-icon ios="logo-facebook" md="logo-facebook" style="color:#3b5998;"></ion-icon>
+    </button>
+</ion-content>
+<style type="text/css" media="screen">
+ion-content {
+  background-color: #3a7bd5 !important;
+}
+
+ion-slides {
+  height: 86%;
+  color: #ffffff;
+}
+
+h4 {
+  position: relative;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+h4.one {
+  margin-top: 0;
+}
+
+h4.one:before {
+  content: "";
+  display: block;
+  border-top: solid 1px;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+h4.one span {
+  background: #3a7bd5;
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+
+</style>

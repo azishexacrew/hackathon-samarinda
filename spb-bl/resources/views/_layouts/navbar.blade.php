@@ -20,7 +20,7 @@
                             </div>
                         </li> --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('pemilik/tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
+                            <a class="nav-link" href="{{ url('tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
                         </li>
                         @if(Auth::check())
                           @if(Auth::user()->level == 'SuperAdmin')

@@ -16,13 +16,35 @@ class ReportpersonalController extends Controller
 
     public function Index()
     {
-        return reportpersonal::paginate(15);
+        return Reportpersonal::with('user', 'tps')->get();
+    }
+
+    /**
+     * @return Reportpersonal
+     */
+    public function personal($id)
+    {
+        return Reportpersonal::with('user', 'tps')->where('users_id', $id)->get();
     }
 
     public function store(Request $request)
     {
-        $report = Reportpersonal::create($request->all());
-        return response()->json(['status' => 'success', 'input', 'data' => $report]);
+//        $report = Reportpersonal::create($request->all());
+        $report = new Reportpersonal;
+
+        $report->tps_id = $this->request->tps_id;
+        $report->users_id = $this->request->users_id;
+        $report->qty = $this->request->qty;
+        $report->jenis = $this->request->jenis;
+        $report->time = $this->request->time;
+        $report->date = $this->request->date;
+
+        $report->save();
+
+        if ($report)
+        {
+            return response()->json(['status' => 'success', 'input', 'data' => $report]);
+        }
     }
 
     public function update(Request $request, $id)

@@ -6,13 +6,14 @@ import {
   AsyncStorage,
   Modal
 } from 'react-native';
-import { Container, Header, Content, List, ListItem, Text, View, Grid, Col,Button } from 'native-base';
+import { Container, Header, Content, List, ListItem, Text, View, Grid, Col,Button, Spinner } from 'native-base';
 import MapView from 'react-native-maps';
 import { url } from '../../services/Network'
-var {height, width} = Dimensions.get('window');
+import Styl from '../../resource/style'
 
+var {height, width} = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
-const LATITUDE_DELTA = 0.0922;
+const LATITUDE_DELTA = 2;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 export default class Tracking extends Component {
   constructor(props){
@@ -44,13 +45,22 @@ export default class Tracking extends Component {
     .then((responseData) => {
       if (responseData.data) {
         this.setState({
-          listTracking : responseData.data
+          listTracking : responseData.data,
+          isLoading : false
         })
       }
     });
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <Container style = { Styl.toCenter } >
+          <Spinner color="#009688" />
+        </Container>
+      );
+    }
+
     return (
       <Container>
         <Modal
@@ -75,7 +85,10 @@ export default class Tracking extends Component {
                     {
                       result.rutedetail.map((result, index) => (
                         <View style={{ padding : 10, backgroundColor : result.status == 'pending' ? '#EF5350' : result.status === 'proses' ? '#FDD835' : '#26A69A' , marginTop : 5 }}>
-                          <Text style={{ color : '#fff' }}> { result.tps.nama } "(" { result.status } ")" </Text>
+                          <Text style={{ color : '#fff' }}> { result.tps.nama } ( { result.status } ) </Text>
+                          <Text style={{ marginLeft: 5, color : '#fff' }}> { result.tps.address } </Text>
+                          <Text style={{ marginLeft:5, color : '#fff' }}> { result.tps.kecamatan }</Text>
+                          <Text style={{ marginLeft:5, color : '#fff' }}> { result.tps.kelurahan }</Text>
                         </View>
                       ))
                     }

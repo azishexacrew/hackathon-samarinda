@@ -33,6 +33,8 @@ Route::group(['prefix' => 'report'], function (){
     //Route Reportpersonal
     Route::group(['prefix' => 'personal', 'namespace' => 'API\Report\Personal'], function (){
         Route::get('/reportpersonal', 'ReportpersonalController@index');
+        Route::get('/reportpersonal/personal/{id}', 'ReportpersonalController@personal');
+
         Route::post('/reportpersonal/create', 'ReportpersonalController@store');
         Route::post('/reportpersonal/edit/{id}', 'ReportpersonalController@update');
         Route::delete('/reportpersonal/delete/{id}', 'ReportpersonalController@destroy');
@@ -69,6 +71,7 @@ Route::group(['prefix' => 'data'], function(){
 
         //Route Rute
         Route::get('/rute', 'RuteController@index');
+        Route::get('/rute/my/{id}', 'RuteController@my');
         Route::post('/rute/create', 'RuteController@store');
         Route::post('/rute/edit/{id}', 'RuteController@update');
         Route::delete('/rute/delete/{id}', 'RuteController@destroy');

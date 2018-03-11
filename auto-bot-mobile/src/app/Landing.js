@@ -18,6 +18,7 @@ export default class Landing extends Component {
     this.state = {
       isLogin : false,
       screen : 'Dashboard',
+      status : 'personal'
     }
   }
 
@@ -29,6 +30,23 @@ export default class Landing extends Component {
           this.setState({
             isLogin : true
           })
+
+          var responseAuth = JSON.parse(response)
+
+          if (responseAuth.data.rule == 'personal') {
+            this.setState({
+              status : 'personal'
+            })
+          }else if (responseAuth.data.rule == 'operator') {
+            this.setState({
+              status : 'operator'
+            })
+          } else {
+            this.setState({
+              status : '-'
+            })
+          }
+          console.log(this.state.status);
         }
       });
   }
@@ -95,16 +113,23 @@ export default class Landing extends Component {
                     Home
                   </Text>
                 </Button>
-                <Button block transparent>
-                  <Text>
-                    Laporan
-                  </Text>
-                </Button>
-                <Button block transparent>
-                  <Text>
-                    Profile
-                  </Text>
-                </Button>
+                {
+                  this.state.status === 'personal' ?
+                  <Button block transparent onPress={()=> this.props.navigation.navigate('Personalreportscreen')}>
+                    <Text>
+                      Laporan
+                    </Text>
+                  </Button>
+                  :
+                  this.state.status === 'operator' ?
+                  <Button block transparent onPress={()=> this.props.navigation.navigate('Operatorreportscreen')}>
+                    <Text>
+                      Laporan
+                    </Text>
+                  </Button>
+                  :
+                  null
+                }
                 <Button block transparent onPress={ this.onLogout.bind(this) }>
                   <Text>
                     Logout
@@ -133,7 +158,16 @@ export default class Landing extends Component {
             <Body>
               <Title>Autobot</Title>
             </Body>
-            <Right />
+            <Right>
+              {
+                this.state.isLogin ?
+                null
+                :
+                <Button transparent onPress= { this.onIsLoginFalse.bind(this) } >
+                  <Icon name='md-body' />
+                </Button>
+              }
+            </Right>
           </Header>
           <Container>
             {

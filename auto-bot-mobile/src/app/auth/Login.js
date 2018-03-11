@@ -2,9 +2,10 @@
 
 import React, { Component } from 'react';
 import { Dimensions, AsyncStorage, Alert } from 'react-native';
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text, View } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, Button, Text, View, Spinner } from 'native-base';
 import { NavigationActions } from 'react-navigation'
 import { url } from '../../services/Network'
+import Styles from '../../resource/style'
 
 var {height, width} = Dimensions.get('window');
 
@@ -24,6 +25,9 @@ export default class Login extends Component {
   }
 
   onButtonLoginPress(){
+    this.setState({
+      isLoading : true
+    })
     fetch(url + 'auth/token', {
       method: 'POST',
       headers: {
@@ -39,9 +43,13 @@ export default class Login extends Component {
       console.log(responseData);
       if (!responseData.token) {
         this.setState({
-          message : 'Login gagal!'
+          message : 'Login gagal!',
+          isLoading : false
         })
       }else {
+        this.setState({
+          isLoading : false
+        })
         if (responseData.data.rule == 'personal' || responseData.data.rule == 'operator') {
 
           AsyncStorage.setItem('auth', JSON.stringify(responseData))
@@ -70,6 +78,15 @@ export default class Login extends Component {
   }
 
   render() {
+
+    if (this.state.isLoading) {
+      return (
+        <Container style = { Styles.toCenter } >
+          <Spinner color="#009688" />
+        </Container>
+      );
+    }
+
     return (
       <View style={ styles.background }>
           <View style={ styles.toCenter }>
@@ -101,7 +118,7 @@ export default class Login extends Component {
                       Login
                     </Text>
                   </Button>
-                  <Button block style={{ margin: 20, marginTop : 0, backgroundColor : '#E91E63', }}>
+                  <Button block style={{ margin: 20, marginTop : 0, backgroundColor : '#E91E63', }} onPress={() => this.props.navigation.navigate('Registerasiscreen') }>
                     <Text>
                       Registerasi
                     </Text>

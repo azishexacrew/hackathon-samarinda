@@ -12,4 +12,14 @@ class Reportpersonal extends Model
 
     protected $table = 'reportpersonals';
     protected $fillable = ['users_id', 'tps_id', 'qty', 'time', 'date'];
+
+    public function Tps()
+    {
+        return $this->belongsTo('App\Models\Data\Tps', 'tps_id');
+    }
+
+    public function User()
+    {
+        return $this->belongsTo('App\Models\User', 'users_id');
+    }
 }

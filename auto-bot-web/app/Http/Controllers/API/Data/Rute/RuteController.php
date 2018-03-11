@@ -21,6 +21,13 @@ class RuteController extends Controller
       return response()->json(['status' => 'done' , 'data' => $rute ]);
   }
 
+    public function my($id)
+    {
+        $rute = Rute::with('user','rutedetail', 'rutedetail.tps', 'angkutan', 'rutetrack')->where('users_id', $id)->get();
+
+        return response()->json(['status' => 'done' , 'data' => $rute ]);
+    }
+
   public function store(Request $request)
   {
       $data = Rute::create($request->all());

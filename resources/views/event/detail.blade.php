@@ -23,7 +23,7 @@
 	 <div class="form-group">
     	<label for="nama_event">Nama Event</label>
     	<input type="text" name="nama_event" class="form-control" value="{{$event->nama}}" readonly="">
-    	
+
   	</div>
     <div class="form-group">
      	<label for="kode_unik">kode unik Event</label>
@@ -32,7 +32,7 @@
    	<div class="form-group">
 	    <label for="deskripsi_event">Deskripsi Event</label>
      	<input type="text" name="deskripsi_event" class="form-control" value="{{$event->penjelasan}}" readonly="">
-  	</div> 
+  	</div>
 	<div class="form-group">
 		<label for="kecamatan">Pilih Kecamatan</label>
      	<input type="text" name="deskripsi_event" class="form-control" value="{{$event->kecamatan}}" readonly="">
@@ -60,10 +60,10 @@
  	<div class="form-group">
     	<label for="nama_rek">Nama Pemilik Rekening</label>
 		<input type="text" name="rekening" class="form-control" value="{{$event->nama_rekening}}" readonly="">
-  	</div> 
-    @if (\Auth::user()->event->kunci != $event->kunci)
+  </div>
+    @if (\Auth::user()->event && \Auth::user()->event->id != $event->id || !\Auth::user()->event)
       <div class="form-group">
-        <a href="#" class="btn btn-md btn-success">Pesan Tenant</a>
+        <a href="{{route('pembayaran.create',['user_id' => $event->user_id])}}" class="btn btn-md btn-success">Pesan Tenant</a>
       </div>
     @endif
 		</div>

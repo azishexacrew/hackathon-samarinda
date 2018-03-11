@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 use App\Models\Event ;
 
 use App\API\Kecamatan;
@@ -33,6 +35,7 @@ class EventController extends Controller
 
     public function generate(){
       $kunci = request('kunci');
+
       return view('event.generate',compact('kunci'));
     }
 

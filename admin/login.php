@@ -1,19 +1,13 @@
-
 <?php include "header.php"; ?>
 
         <div class="clearfix"></div>
         <div class="container" style="margin-top: 80px">
           <div class="row">
-
             <div class="col-md-3"></div>
             <div class="col-md-6">
-
-              <?php if(isset($_GET['pesan']) != "" ): ?>
-                <div class="alert alert-danger" role="alert"><?php echo $_GET['pesan'] ?></div>                    
-              <?php endif ?>
               
-              <div class="panel panel-danger">
-                <div class="panel-heading"><h1>Masuk</h1><span>Silahkan login, isi username dan password yang sesuai.</span></div>
+              <div class="panel panel-success">
+                <div class="panel-heading"><h1>Masuk</h1></div>
                 <div class="panel-body">
                   
                   <form action="login_aksi.php" method="post">
@@ -38,12 +32,9 @@
                     
                     <div class="checkbox">
                     </div>
-                    <button type="submit" class="btn btn-danger">Masuk</button>
+                    <button type="submit" class="btn btn-success">Masuk</button>
                     
                   </form>
-
-<hr>
-<a href="register.php">Daftar Sekarang</a>
 
                 </div>
                 

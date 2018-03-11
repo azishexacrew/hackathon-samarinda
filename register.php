@@ -1,57 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Tong Sampah</title>
-    <link href="pustaka/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse" style="border-radius: 0px; margin-bottom: 0px;">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Tong Sampah</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
+<?php include "header.php"; ?>
 
+        <div class="container" style="margin-top: 40px">
+          <div class="row">            
+              <?php if(isset($_GET['pesan']) != "" ): ?>
+                <div class="alert alert-danger" role="alert"><?php echo $_GET['pesan'] ?></div>                    
+              <?php endif ?>
 
-        <div class="clearfix"></div>
-        <div class="container" style="margin-top: 80px">
-          <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-              
+              <form action="register_aksi.php" method="post">
+              <div class="row">
+              <div class="col-md-5">
               <div class="panel panel-success">
-                <div class="panel-heading"><h1>Daftar</h1><span>Isi formulir pendaftaran dibawah ini</span></div>
-                <div class="panel-body">
-                  
-                  <form action="register_aksi.php" method="post">
-                    
+                <div class="panel-heading"><h1>Daftar</h1><span>Daftar disini, untuk menjadi kontributor sampah</span></div>
+                <div class="panel-body">          
+                                     
                     <div class="form-group">
                       <label for="exampleInputName1">Username</label>
                       
@@ -64,28 +25,94 @@
                       <label for="exampleInputPassword1">Password</label>
                       
                       <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pass" required>
                       </div>
                     </div>
+<hr>
+
+<a href="login.php" class="pull-right"><p>Ke Form Login</p></a>
+                  </div>
+              </div>
+</div>
+
+<!--biodata-->
+<div class="col-md-7">
+<div class="panel panel-primary">
+                <div class="panel-heading"><h1>Biodata</h1><span>Isi biodata dibawah ini dengan lengkap dan benar.</span></div>
+                <div class="panel-body">          
+                                        
+                    <div class="form-group">
+                      <label>Nama</label>
+                      <input type="text" class="form-control" placeholder="Nama" name="nama">
+                    </div>
+
+                    <div class="form-group">
+                      <label>HP</label>
+                      <input type="text" class="form-control" placeholder="HP" name="hp">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Alamat</label>
+                      <input type="text" class="form-control" placeholder="Alamat" name="alamat">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Kecamatan</label>
+                      <select name="kecamatan" class="form-control">
+                        <option value="">Pilih Kecamatan</option>
+                        <option value="">------------------</option>
+                        
+                        <?php 
+                          $data_kecamatan = get_kecamatan($token);
+                          $result = json_decode($data_kecamatan, 1);                          
+                          for ($i = 0; $i < count($result['data']); $i++):
+                        ?>
+                        <option value="<?php echo $result['data'][$i]['name']; ?>"><?php echo $result['data'][$i]['name']; ?></option>
+                        <?php endfor ?>
+
+                      </select>
+                    </div>
                     
+                    <div class="form-group">
+                      <label>Kelurahan</label>
+                      <select name="kelurahan" class="form-control">
+                        <option value="">Pilih Kelurahan</option>
+                        <option value="">------------------</option>
+                        
+                        <?php 
+                          $data_kelurahan = get_kelurahan($token);
+                          $result = json_decode($data_kelurahan, 1);                          
+                          for ($i = 0; $i < count($result['data']['data']); $i++):
+                        ?>
+                        <option value=""><?php echo $result['data']['data'][$i]['name'];  ?></option>
+                        <?php endfor ?>
+
+                      </select>
+                    </div>
                     
+
                     <div class="checkbox">
                     </div>
                     <button type="submit" class="btn btn-success">Daftar</button>
-                    <a href="login.php"><button type="button" class="btn btn-primary">Masuk</button></a>
                     
-                  </form>
+                    
+                  
+                  
                 </div>
                 
+
+
               </div>
+
+</div>
+
+              </form>
             </div>
             
-          </div>
+
         </div>
 
+<div style="margin-bottom: 80px;"></div>
 
-    <script src="pustaka/js/jquery.js"></script>
-    <script src="pustaka/js/bootsrap.min.js"></script>
-  </body>
-</html>
+<?php include "footer.php"; ?>

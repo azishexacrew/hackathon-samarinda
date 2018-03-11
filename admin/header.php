@@ -1,22 +1,6 @@
-<?php 
-include '../core/helper.php' ;
-include '../core/koneksi.php' ;
-
-
-cek_login();
-
-$s_usr = "SELECT * FROM user WHERE id_user=$id";
-$q_usr = mysqli_query($conn,$s_usr);
-$td = mysqli_fetch_assoc($q_usr);
-$usr=ucfirst($td['username']);
-
-if($_SESSION['id'] == ""){
-    header("Location: ".BASE_URL. "/index.php");
-  }
-
-
-?>
-
+<?php include '../core/helper.php' ?>
+<?php include '../core/koneksi.php' ?>
+<?php is_admin() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +29,30 @@ if($_SESSION['id'] == ""){
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">Beranda</a></li>
-        <li><a href="daftar_harga.php">Daftar Harga</a></li> 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $usr;  ?> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Driver <span class="caret"></span></a>
 
           <ul class="dropdown-menu">
-            <li><a href="tambah_sampah.php">Tambah Sampah</a></li>
-            <li><a href="../logout.php?x=ok">Logout</a></li>
+            <li><a href="tambah_driver.php">Tambah Driver</a></li>
+            <li><a href="list_driver.php">List Driver</a></li>
+
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
+            <li><a href="tambah_user.php">Tambah User</a></li>
+            <li><a href="list_user.php">List User</a></li>
+
+          </ul>
+        </li> 
+        <li><a href="daftar_harga.php">Daftar Harga</a></li> 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
+            <li><a href="../logout.php">Logout</a></li>
           </ul>
         </li>     
               

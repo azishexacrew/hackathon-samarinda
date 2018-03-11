@@ -14,9 +14,8 @@
 
 ?>
 <?php
-session_start();
-include "core/koneksi.php" ;
-include "core/helper.php";
+include "../core/koneksi.php" ;
+include "../core/helper.php";
 
 $user = $_POST['user'];
 $pass = $_POST['pass'];
@@ -31,28 +30,25 @@ $st = $row['level'];
 
 
 if($st == 1){
-    
+    // die('admin');
     $_SESSION["id"]=$id_user;
     $_SESSION["username"]=$row['username'];
-    $_SESSION["level"]=$row['level'];
+
     header('Location: '. BASE_URL. "/admin");
 }
 elseif($st==2){    
     $_SESSION["id"]=$id_user;
     $_SESSION["username"]=$row['username'];
-    $_SESSION["level"]=$row['level'];
+
     header('Location: '. BASE_URL. "/user");
 }
 elseif($st==3){
-    
+    die('driver');
     $_SESSION["id"]=$id_user;
     $_SESSION["username"]=$row['username'];
-    $_SESSION["level"]=$row['level'];
-    header('Location: '. BASE_URL. "/driver");
 }
 else{
-    $pesan = "Username dan Password Salah";
-    header('Location: '. BASE_URL. "/login.php?pesan=$pesan");
+    die('gagal');
 }
 
 ?>

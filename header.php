@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'core/api.php' ;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img width="80px" src="image/logo-tong3.png"></a>
+      <a class="navbar-brand" href="index.php"><img width="80px" src="image/logo-tong3.png"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,7 +31,27 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">Beranda</a></li>
-        <li><a href="#">Login or Register</a></li>        
+        <li><a href="tentang.php">Tentang</a></li>
+        <?php if(!isset($_SESSION['id'])): ?>
+        <li><a href="login.php">Login or Register</a></li>        
+      <?php endif ?>
+      <?php if(isset($_SESSION['id'])): ?>
+
+        <?php if($_SESSION['level'] == 1): ?>
+        <li><a href="admin/">Profile</a></li>
+        <?php endif ?>
+
+        <?php if($_SESSION['level'] == 2 ): ?>
+        <li><a href="user/">Profile</a></li>
+        <?php endif ?>
+
+        <?php if($_SESSION['level'] == 3): ?>
+        <li><a href="driver/">Profile</a></li>
+        <?php endif ?>
+
+      <?php endif ?>
+
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

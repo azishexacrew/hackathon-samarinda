@@ -15,8 +15,8 @@ Route::get('/', 'LandingController@index')->name('landingpage');
 
 
 Route::group(['middleware' => 'masuk'],function(){
-  Route::get('tenant\konfirmasi','TenantController@konfirmasi')->name('tenant.konfirmasi');
-  Route::get('tenant\detail','TenantController@detail')->name('tenant.detail');
+  Route::get('tenant/konfirmasi','TenantController@konfirmasi')->name('tenant.konfirmasi');
+  Route::get('tenant/detail','TenantController@detail')->name('tenant.detail');
   Route::resource('tenant','TenantController');
   Route::get('event/genereate','EventController@generate')->name('event.generate');
   Route::resource('event','EventController');

@@ -1,7 +1,7 @@
 @extends('_layouts.default')
 
 @section('tubuh')
-<div class="container text-center h3">Buat Tenant</div>
+<div class="container text-center h3">Informasi Tenant</div>
 <div class="container-fluid" id="body">
 	<div class="row">
 		<form action="{{route('tenant.store')}}" method="post" enctype="multipart/form-data">
@@ -40,9 +40,7 @@
 	    <label for="alamat_event">Alamat Tenant</label>
 	 	<textarea type="text" class="form-control" name="alamat" id="alamat_event">{{$tenant->alamat}}</textarea>
   	</div>
-  	<div class="form-group">
-  		<button type="submit" class="btn btn-success">Buat Tenant</button>
-  	</div>
+
 		</div>
 		</form>
 	</div>

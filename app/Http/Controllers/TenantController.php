@@ -46,8 +46,8 @@ class TenantController extends Controller
           $extension      = $file->getClientOriginalExtension();
           $fileName       = str_random(8) . '.' . $extension;
           request()->file('gambar')->move("image/", $fileName);
-          $tenant->gambar    = $fileName;
       }
+      $tenant->gambar    = $fileName;
 
       $tenant->save();
 

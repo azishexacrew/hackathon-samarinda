@@ -19,7 +19,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('admin.home') }}">
                     Admin Management
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="{{route('ruko.index')}}">Data Ruko</a></li>
                         <li><a class="nav-link" href="{{route('kios.index')}}">Data Kios</a></li>
-                        <li><a class="nav-link" href="#">Data Penyewa Ruko/Kios</a></li>
+                        <li><a class="nav-link" href="{{ route('pengguna.datapenyewarukokios') }}" target="_blank">Data Penyewa Ruko/Kios</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

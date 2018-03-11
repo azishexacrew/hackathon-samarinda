@@ -8,6 +8,10 @@ use App\Kios;
 
 class RukoKiosPController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function getIndex()
     {
     	$rukos = Ruko::orderBy('created_at', 'desc')->paginate(5);

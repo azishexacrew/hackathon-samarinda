@@ -42,7 +42,7 @@
                                 <a class="nav-link" href="{{ route('sewaKios.index') }}">Kios Saya</a>
                             </div>
                         </li>
-                        <li><a class="nav-link" href="{{ route('pengguna.datapenyewarukokios') }}">Data Penyewa Ruko/Kios</a></li>
+                        <li><a class="nav-link" href="{{ route('pengguna.datapenyewarukokios') }}" target="_blank">Data Penyewa Ruko/Kios</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

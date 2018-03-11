@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sewaRuko()
+    {
+        return $this->hasMany('App\SewaRuko');
+    }
+
+    public function sewaKios()
+    {
+        return $this->hasMany('App\SewaKios');
+    }
 }

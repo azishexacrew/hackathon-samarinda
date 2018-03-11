@@ -29,7 +29,7 @@
 							<td>{{ $sewakios->no_hp }}</td>
 							<td>{{ $sewakios->jenis_usaha }}</td>
 							<td>{{ $sewakios->periode_penyewaan }}</td>
-							<td>{{ $sewakios->nomor_ruko }}</td>
+							<td>{{ $sewakios->kios_id }}</td>
 						</tr>
 					</tbody>
 				</table>

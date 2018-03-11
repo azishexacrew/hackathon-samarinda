@@ -9,9 +9,14 @@ use Session;
 use Storage;
 use Image;
 use Purifier;
+use Auth;
 
 class SewaKiosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +64,7 @@ class SewaKiosController extends Controller
         $sewakios->periode_penyewaan = $request->periode_penyewaan;
         $sewakios->kios_id = $request->kios_id;
 
-        $sewakios->save();
+        Auth::user()->sewaRuko()->save($sewakios);
 
         return redirect()->route('sewaKios.show', $sewakios->id);
     }

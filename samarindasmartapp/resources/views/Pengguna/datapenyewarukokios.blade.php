@@ -3,9 +3,16 @@
 @section('content')
 <?php
 
-echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>";
+echo "<link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css'>";
+echo "<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>";
+
 echo "<script>
+
 	$(document).ready(function(){
+		$(document).ready(function(){
+    $('#myTable').DataTable();
+});
 		$.ajax({
 			type: 'GET',
 			headers:{
@@ -24,5 +31,22 @@ echo "<script>
 </script>
 ";
 ?>
+
+<table class="table" id="myTable">
+	<thead>
+		<th>Nama</th>
+		<th>Pemilik</th>
+		<th>Telepon</th>
+		<th>Nomor</th>
+		<th>Blok</th>
+		<th>Jenis</th>
+		<th>Jenis Usaha</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
 
 @endsection

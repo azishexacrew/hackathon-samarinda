@@ -10,4 +10,9 @@ class SewaRuko extends Model
     {
     	return $this->belongsTo('App\Ruko');
     }
+
+    public function userr()
+    {
+    	return $this->belongsTo('App\User');
+    }
 }

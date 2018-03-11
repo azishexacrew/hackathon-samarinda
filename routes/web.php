@@ -15,6 +15,8 @@ Route::get('/', 'LandingController@index')->name('landingpage');
 
 
 Route::group(['middleware' => 'masuk'],function(){
+  Route::get('pembayaran/konfirmasi','PembayaranController@konfirmasi')->name('pembayaran.konfirmasi');
+  Route::resource('pembayaran','PembayaranController');
   Route::get('tenant/konfirmasi','TenantController@konfirmasi')->name('tenant.konfirmasi');
   Route::get('tenant/detail','TenantController@detail')->name('tenant.detail');
   Route::resource('tenant','TenantController');
@@ -37,14 +39,6 @@ Route::resource('pengaturan','PengaturanController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('pembayaran',function(){
-	return view('pembayaran.index');
-});
-
-Route::get('pembayaran/konfirmasi',function(){
-	return view('pembayaran.konfirmasibayar');
-});
 
 Route::get('pembayaran/cara',function(){
 	return view('pembayaran.carabayar');

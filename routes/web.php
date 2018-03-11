@@ -15,7 +15,7 @@ Route::get('/', 'LandingController@index')->name('landingpage');
 
 Route::get('tenant','TenantController@konfirmasi');
 
-
+Route::get('event/genereate','EventController@generate')->name('event.generate');
 Route::resource('event','EventController');
 
 Route::get('personalisasi',function(){

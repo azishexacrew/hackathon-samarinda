@@ -5,4 +5,6 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hackathon.user.c_trash.petugas.peta_petugas" />
+    tools:context="hackathon.user.c_trash.petugas.peta_petugas" >
+
+</fragment>

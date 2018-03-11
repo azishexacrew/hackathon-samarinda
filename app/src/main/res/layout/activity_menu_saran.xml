@@ -18,7 +18,7 @@
             android:text="Judul" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/text_judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -31,14 +31,14 @@
             android:text="Deskripsi" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/text_deskripsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_kirim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="KIRIM" />

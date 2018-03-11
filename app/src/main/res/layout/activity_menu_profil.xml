@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hackathon.user.c_trash.masyarakat.menu_profil">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIK" />
+
+            <TextView
+                android:id="@+id/text_nik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama" />
+
+            <TextView
+                android:id="@+id/text_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tempat Tgl Lahir" />
+
+            <TextView
+                android:id="@+id/text_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin" />
+
+            <TextView
+                android:id="@+id/text_jk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-mail" />
+
+            <TextView
+                android:id="@+id/text_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Password Baru"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Konfirmasi Password Lama"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ubah password" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

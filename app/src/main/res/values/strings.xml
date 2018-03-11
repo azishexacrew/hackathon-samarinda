@@ -3,6 +3,6 @@
     <string name="title_activity_peta_petugas">Map</string>
     <string name="title_activity_peta_masyarakat">Map</string>
     <string name="action_saran">Kritik dan Saran</string>
-    <string name="action_logout">Keluar</string>
-    <string name="action_tutup">Tutup</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_peta">Peta</string>
 </resources>

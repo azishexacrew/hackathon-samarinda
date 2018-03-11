@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="320dp"
     android:layout_height="match_parent"
-    tools:context="hackathon.user.c_trash.masyarakat.menu_login">
+    tools:context="hackathon.user.c_trash.masyarakat.menu_login"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Selamat Datang Masyarakat"
-            android:textAlignment="center" />
 
-        <EditText
-            android:id="@+id/text_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nama Pengguna"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/text_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/text_password"
+                android:layout_alignParentStart="true"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/text_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Kata Sandi"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/text_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/text_password"
+                android:layout_alignParentStart="true"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
 
         <Button
             android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masuk" />
+            android:layout_above="@+id/label_forgotpwd"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp"
+            android:text="MASUK" />
+
+        <Button
+            android:id="@+id/button_daftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daftar" />
 
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -45,7 +46,10 @@
             android:label="@string/title_activity_peta_masyarakat" />
         <activity android:name=".masyarakat.menu_utama_masyarakat" />
         <activity android:name=".masyarakat.menu_saran" />
-        <activity android:name=".petugas.menu_utama_petugas"></activity>
+        <activity android:name=".petugas.menu_utama_petugas" />
+        <activity android:name=".masyarakat.menu_daftar_masyarakat" />
+        <activity android:name=".masyarakat.menu_profil" />
+        <activity android:name=".petugas.menu_verifikasi"></activity>
     </application>
 
 </manifest>

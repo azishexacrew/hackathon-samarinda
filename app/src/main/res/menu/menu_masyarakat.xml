@@ -3,11 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+
     <item
         android:id="@+id/action_sarankritik"
         android:orderInCategory="100"
         android:title="@string/action_saran"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_editprofil"
+        android:orderInCategory="100"
+        android:title="Profil"
+        app:showAsAction="never" />
+
 
     <item
         android:id="@+id/action_logout"
@@ -16,15 +25,9 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_tutup"
-        android:orderInCategory="100"
-        android:title="@string/action_tutup"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/action_peta"
         android:orderInCategory="100"
-        android:title="@string/action_tutup"
+        android:title="Peta"
         app:showAsAction="always" />
 
 </menu>

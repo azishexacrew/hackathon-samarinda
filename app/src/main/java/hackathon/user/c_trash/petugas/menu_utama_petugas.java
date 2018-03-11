@@ -42,11 +42,6 @@ public class menu_utama_petugas extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.action_tutup) {
-            System.exit(0);
-            return true;
-        }
-
         if (id == R.id.action_peta) {
             Intent login = new Intent(getApplicationContext(), peta_petugas.class);
             startActivity(login);

@@ -16,7 +16,9 @@ class SewaController extends Controller
   {
       $active = 'pemilik';
       $user = Auth::user();
-      $sewa = Sewa::with('pemilik','tenant','penyewa')->where('pemilik_id',$user->id)->orderBy('id','desc');
+      $pemilik = Pemilik::where('user_id',$user->id)->first();
+      $sewa = Sewa::with('pemilik','tenant','penyewa')->where('pemilik_id',$pemilik->id)->orderBy('id','desc');
+      
       $term = request('term');
       if($term){
           $term = '%' . $term . '%';

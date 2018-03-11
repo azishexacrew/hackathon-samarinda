@@ -51,7 +51,7 @@
                                 <td>{{ $item->awal }}</td>
                                 <td>{{ $item->akhir }}</td>
                                 <td>{{ $item->lama }} Hari</td>
-                                <td>{{ $item->pemilik->name }}</td>
+                                <td>{{ $item->pemilik->nama }}</td>
                                 <td>{{ $item->penyewa->nama }}</td>
                                 <td>{{ $item->tenant->area }}</td>
                                 <td class="td-actions">

@@ -1,70 +1,46 @@
 @extends('_layouts.default')
 
 @section('tubuh')
-<div class="container text-center h3">Info event</div>
+<div class="container text-center h3">Buat Tenant</div>
 <div class="container-fluid" id="body">
 	<div class="row">
-		<form action="{{route('event.store')}}" method="post" enctype="multipart/form-data">
+		<form action="{{route('tenant.store')}}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 		<div class="col-sm-offset-1 col-sm-3">
 			<div class="form-group">
 				<div class="panel panel-default text-right">
-			  		<div class="panel-heading text-left">Gambar Event</div>
-			  		<img id="image-holder" src="{{asset('image/'.$event->gambar)}}" alt="" height="100%" width="100%">
+			  		<div class="panel-heading text-left">Upload Gambar Tenant</div>
+			  		<img id="image-holder" alt="" height="100%" width="100%">
+				<input type="file" name="gambar" id="profileimg">
+				<label for="profileimg" class="btn btn-success btn-sm" style="margin: 5px 5px 5px 5px">Input file</label>
 			</div>
 			</div>
 		</div>
 
 		<div class="col-sm-4">
-      <div class="form-group">
-       	<label for="nama_event">Nama Owner</label>
-       	{{\Auth::user()->where('id',$event->user_id)->value('nama')}}
-     	</div>
 	 <div class="form-group">
-    	<label for="nama_event">Nama Event</label>
-    	{{$event->nama}}
+    	<label for="nama_event">Nama Tenant</label>
+    	<input type="text" class="form-control" name="nama" id="nama_event" >
   	</div>
-    <div class="form-group">
-     	<label for="nama_event">kode unik Event</label>
-     	{{$event->kunci}}
-   	</div>
    	<div class="form-group">
-	    <label for="deskripsi_event">Deskripsi Event</label>
-	    {{$event->penjelasan}}
+	    <label for="deskripsi_event">Deskripsi Tenant</label>
+	    <textarea type="text" class="form-control" name="penjelasan" id="deskripsi_event"></textarea>
   	</div>
 		<div class="form-group">
 			<label for="kecamatan">Pilih Kecamatan</label>
-			{{$event->kecamatan}}
+			<select class="form-control" name="kecamatan" id="kecamatan">
+				@for ($i=0; $i < count($kec); $i++)
+					<option value="{{$kec[$i]['id']}}">{{$kec[$i]['name']}}</option>
+				@endfor
+			</select>
 		</div>
   	<div class="form-group">
-	    <label for="alamat_event">Alamat Event</label>
-	 	   {{$event->alamat}}
+	    <label for="alamat_event">Alamat Tenant</label>
+	 	<textarea type="text" class="form-control" name="alamat" id="alamat_event"></textarea>
   	</div>
-  	<div class="row">
-	  		<div class="form-group col-sm-6">
-			<label for="bentuk_tenant">Bentuk Tenant</label>
-		 	{{$event->bentuk_tenant}}
-	  	</div>
-			<div class="form-group col-sm-6">
-				<label for="">kategori</label>
-        {{$event->kategori}}
-				<label for="">harga</label>
-				{{$event->harga}}
-			</div>
+  	<div class="form-group">
+  		<button type="submit" class="btn btn-success">Buat Tenant</button>
   	</div>
- 	<div class="form-group">
-    	<label for="no_rek">Nomor Rekening</label>
-    	{{$event->rekening}}
-  	</div>
- 	<div class="form-group">
-    	<label for="nama_rek">Nama Pemilik Rekening</label>
-    	{{$event->nama_rekening}}
-  	</div>
-    @if (\Auth::user()->event->kunci != $event->kunci)
-      <div class="form-group">
-        <a href="#" class="btn btn-lg btn-success">Pesan Tenant</a>
-      </div>
-    @endif
 		</div>
 		</form>
 	</div>

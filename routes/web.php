@@ -13,7 +13,8 @@
 
 Route::get('/', 'LandingController@index')->name('landingpage');
 
-Route::get('tenant','TenantController@konfirmasi');
+Route::get('tenant\konfirmasi','TenantController@konfirmasi');
+Route::resource('tenant','TenantController');
 
 Route::get('event/genereate','EventController@generate')->name('event.generate');
 Route::resource('event','EventController');

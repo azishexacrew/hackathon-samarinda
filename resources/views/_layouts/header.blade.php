@@ -18,7 +18,7 @@
         @if (Illuminate\Support\Facades\Auth::check())
           <li class="active"><a href="{{asset('/')}}">Halaman Depan <span class="sr-only">(current)</span></a></li>
           <li><a href="#">Profil </a></li>
-          <li><a href="#">Profil Tenant </a></li>
+          <li><a href="{{route('tenant.create')}}">Profil Tenant </a></li>
           <li><a href="#">Manage Tenant </a></li>
         @endif
       </ul>

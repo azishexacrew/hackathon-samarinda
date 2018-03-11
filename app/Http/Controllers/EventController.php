@@ -39,6 +39,7 @@ class EventController extends Controller
     public function store(){
       $event = new Event ;
       $event->nama = request('nama');
+      $event->user_id = Auth::user()->id;
       $event->kunci = $this->random();
       $event->penjelasan = request('penjelasan');
       $event->alamat = request('alamat');

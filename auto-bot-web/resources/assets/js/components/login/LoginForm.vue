@@ -1,4 +1,19 @@
 <template>
+  <div>
+
+   <v-dialog v-model="dialog3" max-width="500px">
+      <v-card>
+        <v-card-title>
+          <!-- formRegistras.vue -->
+          <form-registrasi></form-registrasi>
+          <v-spacer></v-spacer>
+        </v-card-title>
+        <v-card-actions>
+          <v-btn color="primary" flat @click.stop="dialog3=false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
   <v-form v-model="valid" ref="form" lazy-validation>
     <v-text-field
       label="Email"
@@ -20,7 +35,7 @@
       :rules="[v => !!v || 'You must agree to continue!']"
       required
     ></v-checkbox>
-
+   <!-- submit -->
     <v-btn
       @click="submit"
       
@@ -29,14 +44,21 @@
     >
       submit
     </v-btn>
+    <!-- registrasi -->
+     <v-btn @click.stop="dialog3 = true">
+        Register
+    </v-btn>
   </v-form>
+</div>
 </template>
 
 <script>
   import axios from 'axios'
 
+  let formRegistrasi = require('./formRegister');
   export default {
     data: () => ({
+      dialog3: false,
       valid: true,
       name: '',
       emailRules: [
@@ -64,6 +86,9 @@
           })
         }
       }
+    },
+    components:{
+      formRegistrasi
     }
   }
 </script>

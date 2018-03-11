@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use GuzzleHttp\Client;
 use GuzzleHttp\Message\Response;
+use App\Sewa;
+use App\Pemilik;
+use App\Penyewa;
+use App\PemilikTenant;
+use Auth;
+use Carbon\Carbon;
 
 class TenantController extends Controller
 {
@@ -42,6 +48,15 @@ class TenantController extends Controller
      //     $user->where('name','LIKE', $term);
      // }
 
-     return view('tracking-tenant.index', compact('data'));
+
+     $sewa = Sewa::with('pemilik','penyewa','tenant')->orderBy('id','DESC');
+     $term = request('term');
+      if($term){
+          $term = '%' . $term . '%';
+          $sewa->where('kode','LIKE', $term);
+      }
+      $sewa = $sewa->paginate(1);
+
+     return view('tracking-tenant.index', compact('sewa','term'));
     }
 }

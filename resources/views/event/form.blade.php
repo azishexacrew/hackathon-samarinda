@@ -20,11 +20,11 @@
 		<div class="col-sm-4">
 	 <div class="form-group">
     	<label for="nama_event">Nama Event</label>
-    	<input type="text" class="form-control" name="nama" id="nama_event" placeholder="Email">
+    	<input type="text" class="form-control" name="nama" id="nama_event" >
   	</div>
    	<div class="form-group">
 	    <label for="deskripsi_event">Deskripsi Event</label>
-	    <textarea type="text" class="form-control" name="penjelasan" id="deskripsi_event" placeholder="Password"></textarea>
+	    <textarea type="text" class="form-control" name="penjelasan" id="deskripsi_event" ></textarea>
   	</div>
 		<div class="form-group">
 			<label for="kecamatan">Pilih Kecamatan</label>
@@ -36,7 +36,7 @@
 		</div>
   	<div class="form-group">
 	    <label for="alamat_event">Alamat Event</label>
-	 	<textarea type="text" class="form-control" name="alamat" id="alamat_event" placeholder="Password"></textarea>
+	 	<textarea type="text" class="form-control" name="alamat" id="alamat_event" ></textarea>
   	</div>
   	<div class="row">
 	  		<div class="form-group col-sm-6">

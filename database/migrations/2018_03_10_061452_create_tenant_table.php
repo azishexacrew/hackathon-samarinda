@@ -15,7 +15,12 @@ class CreateTenantTable extends Migration
     {
         Schema::create('tenant', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
+            $table->string('nama')->nullable();
+            $table->string('penjelasan')->nullable();
+            $table->string('kontak')->nullable();
+            $table->string('gambar')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('alamat')->nullable();
             $table->timestamps();
         });
     }

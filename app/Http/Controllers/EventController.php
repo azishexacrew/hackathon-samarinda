@@ -39,16 +39,18 @@ class EventController extends Controller
     public function store(){
       $event = new Event ;
       $event->nama = request('nama');
-      $event->user_id = Auth::user()->id;
+      $event->user_id = \Auth::user()->id;
       $event->kunci = $this->random();
       $event->penjelasan = request('penjelasan');
       $event->alamat = request('alamat');
       $event->bentuk_tenant = request('bentuk_tenant');
       $event->rekening = request('rekening');
       $event->nama_rekening = request('nama_rekening');
+      $event->kategori = request('kategori');
+      $event->harga = request('harga');
 
       if (request()->file('gambar')) {
-        @unlink(public_path('image/' . $event->foto));
+        @unlink(public_path('image/' . $event->gambar));
           $file           = request()->file('gambar');
           $extension      = $file->getClientOriginalExtension();
           $fileName       = str_random(8) . '.' . $extension;

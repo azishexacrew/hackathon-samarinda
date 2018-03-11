@@ -72,6 +72,7 @@ Route::group(['prefix' => 'data'], function(){
         //Route Rute
         Route::get('/rute', 'RuteController@index');
         Route::get('/rute/my/{id}', 'RuteController@my');
+        Route::get('/rute/update/status/{id}', 'RuteController@updateStatus');
         Route::post('/rute/create', 'RuteController@store');
         Route::post('/rute/edit/{id}', 'RuteController@update');
         Route::delete('/rute/delete/{id}', 'RuteController@destroy');
@@ -79,6 +80,7 @@ Route::group(['prefix' => 'data'], function(){
 
         //Route Rute Detail
         Route::get('/rutedetail', 'RutedetailController@index');
+        Route::get('/rutedetail/update/status/{id}', 'RutedetailController@updateStatus');
         Route::post('/rutedetail/create', 'RutedetailController@store');
         Route::post('/rutedetail/edit/{id}', 'RutedetailController@update');
         Route::delete('/rutedetail/delete/{id}', 'RutedetailController@destroy');
@@ -90,5 +92,7 @@ Route::group(['prefix' => 'data'], function(){
         Route::post('/rutetrack/edit/{id}', 'RutetrackController@update');
         Route::delete('/rutetrack/delete/{id}', 'RutetrackController@destroy');
         Route::get('/rutetrack/{id}', 'RutetrackController@show');
+        Route::post('/rutetrack/update/track/{id}', 'RutetrackController@updateTrack');
+
     });
 });

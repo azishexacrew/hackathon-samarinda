@@ -52,4 +52,20 @@ class RutetrackController extends Controller
       $data->delete();
       return '';
   }
+
+    public function updateTrack($id){
+
+        $rute = Rutetrack::where('rutes_id',$id)->first();
+
+        if ($rute){
+            $rute->lat = $this->request->lat;
+            $rute->lng = $this->request->lng;
+
+            $rute->save();
+
+            return $rute;
+        }
+
+
+    }
 }

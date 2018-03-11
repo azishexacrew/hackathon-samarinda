@@ -53,5 +53,5 @@ export default StackNavigator({
     screen : Registerasiscreen
   }
 }, {
-  initialRouteName : 'Operatorreportscreen'
+  initialRouteName : 'Landingscreen'
 } );

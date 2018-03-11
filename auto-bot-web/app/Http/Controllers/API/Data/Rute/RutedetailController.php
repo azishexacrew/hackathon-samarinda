@@ -53,4 +53,32 @@ class RutedetailController extends Controller
       $data->delete();
       return '';
   }
+
+    public function updateStatus($id){
+
+        $status = '';
+
+        $rute = Rutedetail::find($id);
+
+        if ($rute){
+            $rute->rutes_id = $rute->rutes_id;
+            $rute->tps_id = $rute->tps_id;
+
+            if ($rute->status == 'pending'){
+                $status = 'proses';
+            }elseif ($rute->status == 'proses'){
+                $status = 'selesai';
+            } else{
+                $status = 'selesai';
+            }
+
+            $rute->status = $status;
+
+            $rute->save();
+
+            return response()->json(['status' => 'success', 'data' => $rute]);
+        }
+
+
+    }
 }

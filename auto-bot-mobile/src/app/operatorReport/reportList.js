@@ -25,11 +25,18 @@ export default class Tracking extends Component {
     this.state = {
       isLoading : true,
       listTracking : [],
-      item : []
+      item : [],
+      latitude: null,
+      longitude: null,
+      error: null,
     }
   }
 
   componentDidMount(){
+    this.getData()
+  }
+
+  getData(){
     AsyncStorage.getItem('auth')
       .then((response) => {
         console.log("response", response);
@@ -44,7 +51,6 @@ export default class Tracking extends Component {
   }
 
   getListTracking(id){
-
     fetch(url + 'data/rute/rute/my/' + id, {
       method: 'GET',
       headers: {
@@ -57,12 +63,95 @@ export default class Tracking extends Component {
       if (responseData.data) {
         this.setState({
           listTracking : responseData.data,
+        })
+
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            this.setState({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+              error: null,
+              isLoading : false
+            });
+          },
+          (error) => this.setState({ error: error.message }),
+          { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+        );
+      }
+    });
+  }
+
+  onRuteUpdate(id){
+
+    this.setState({
+      isLoading : true
+    })
+    fetch(url + 'data/rute/rute/update/status/' + id, {
+      method: 'GET',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseData) => {
+      console.log(responseData);
+      if (responseData.status) {
+        this.setState({
+          isLoading : false
+        })
+        this.getData()
+      }
+    });
+  }
+
+  onChangeLocation(id){
+    this.setState({
+      isLoading : true
+    })
+    fetch(url + 'data/rute/rutetrack/update/track/' + id, {
+      method: 'POST',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        lat: this.state.latitude,
+        lng: this.state.longitude,
+      }),
+    }).then((response) => response.json())
+    .then((responseData) => {
+      console.log(responseData);
+      if (responseData.status) {
+        this.setState({
           isLoading : false
         })
       }
     });
   }
 
+  onRutedetailUpdate(id){
+
+    this.setState({
+      isLoading : true
+    })
+    fetch(url + 'data/rute/rutedetail/update/status/' + id, {
+      method: 'GET',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => response.json())
+    .then((responseData) => {
+      console.log(responseData);
+      if (responseData.status) {
+        this.setState({
+          isLoading : false
+        })
+        this.onChangeLocation(responseData.data.rutes_id)
+        this.getData()
+      }
+    });
+  }
   render() {
     if (this.state.isLoading) {
       return (
@@ -96,13 +185,13 @@ export default class Tracking extends Component {
                             </Col>
                             <Col>
                               {
-                                item.status === 'proses' ?
-                                    result.status === 'pending' || result.status === 'proses' ?
-                                    <Button transparent >
+                                item.status === "proses" ?
+                                    result.status === 'selesai' ?
+                                    null
+                                    :
+                                    <Button transparent onPress={ this.onRutedetailUpdate.bind(this, result.id) }>
                                       <Icon name="md-checkbox" style={{ color : '#fff' }} />
                                     </Button>
-                                    :
-                                    null
                                 :
                                 null
                               }
@@ -116,14 +205,14 @@ export default class Tracking extends Component {
                   <View style={{ marginTop : 20, flex : 1 }}>
                     {
                       item.status === 'pending' ?
-                      <Button block onPress={() => this.setModalVisible(true , item) }>
+                      <Button block onPress={ this.onRuteUpdate.bind(this, item.id) }>
                         <Text>
                           Mulai
                         </Text>
                       </Button>
                       :
                       item.status === 'proses' ?
-                      <Button block onPress={() => this.setModalVisible(true , item) }>
+                      <Button block onPress={ this.onRuteUpdate.bind(this, item.id) }>
                         <Text>
                           Selesai
                         </Text>

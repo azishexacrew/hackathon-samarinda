@@ -58,4 +58,35 @@ class RuteController extends Controller
       $data->delete();
       return '';
   }
+
+  public function updateStatus($id){
+
+      $status = '';
+
+      $rute = Rute::find($id);
+
+      if ($rute){
+          $rute->nama = $rute->nama;
+          $rute->angkutans_id = $rute->angkutans_id;
+          $rute->time = $rute->time;
+          $rute->date = $rute->date;
+          $rute->users_id = $rute->users_id;
+
+          if ($rute->status == 'pending'){
+              $status = 'proses';
+          }elseif ($rute->status == 'proses'){
+              $status = 'selesai';
+          } else{
+              $status = 'selesai';
+          }
+
+          $rute->status = $status;
+
+          $rute->save();
+
+          return response()->json(['status' => 'success']);
+      }
+
+
+  }
 }

@@ -25,10 +25,7 @@
                               <a class="nav-link" href="{{ url('tenant') }}"><i class="fa fa-industry fa fw"></i> Tenant</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('tenant') }}">Administrasi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('tenant') }}">Laporan</a>
+                                <a class="nav-link" href="{{ url('sitemanager/laporan') }}"><i class="fa fa-file-text fa-fw"></i> Laporan</a>
                             </li>
                           @endif
                           @if(Auth::user()->level == 'Pemilik')

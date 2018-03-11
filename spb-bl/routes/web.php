@@ -36,5 +36,5 @@ Route::group(['prefix'=>'sitemanager','as' => 'web::','middleware' => ['auth','s
     return view('home');
   });
   Route::resource('data-pemilik', 'PemilikController');
-  Route::resource('laporan', 'PemilikController');
+  Route::get('laporan', 'LaporanController@index');
 });

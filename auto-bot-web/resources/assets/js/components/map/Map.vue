@@ -16,11 +16,15 @@
           ></gmap-marker>
         </gmap-map>
       </v-flex>
+      <form-map></form-map>
     </v-layout>
 </template>
 <script>
 import Vue from 'vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
+
+let formMap = require('./formMap');
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: ' AIzaSyDGTJj1KSaycU5A1ZSWRwVUBm8ldQ4kz0c',
@@ -28,6 +32,9 @@ Vue.use(VueGoogleMaps, {
   }
 })
 export default {
+    components: {
+        formMap
+      },
     data () {
       return {
         center: {lat: -0.4755328, lng: 117.1495604},

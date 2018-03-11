@@ -8,6 +8,13 @@ use App\Traits\Uuids;
 class Profil extends Model
 {
     use Uuids;
-    protected $table = 'profil';
     public $incrementing = false;
+
+    protected $table = 'profil';
+    protected $fillable = ['users_id', 'NIK', 'address', 'kecamatan', 'kelurahan' ,'rt', 'lat', 'lng'];
+
+    public function User()
+    {
+        return $this->belongsTo('App\Models\User', 'users_id');
+    }
 }

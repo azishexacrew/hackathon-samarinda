@@ -31,7 +31,16 @@
                 <v-icon>map</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-                <v-list-tile-title >Route</v-list-tile-title>
+                <v-list-tile-title >Peta Rute</v-list-tile-title>
+            </v-list-tile-content>
+        </v-list-tile>
+     <!-- Tps -->
+        <v-list-tile  @click="edit()" href="#/tps">
+            <v-list-tile-action>
+                <v-icon>shopping_cart</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+                <v-list-tile-title >TPS</v-list-tile-title>
             </v-list-tile-content>
         </v-list-tile>
     <!-- person -->
@@ -80,6 +89,7 @@
 </div>
 </template>
 <script>
+    
   export default {
     data () {
       return {
@@ -87,6 +97,7 @@
         mini: false,
         right: null
       }
-    }
+    },
+    edit(){}
   }
 </script>

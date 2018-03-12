@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SaBer - Lokasi TPA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	</head>
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="#">SaBer - Samarinda Bersih</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="tentang.html">About Us</a></li>
+						<li><a href="kontak.html">Info</a></li>
+						<li><a href="#" class="daftar.html">Sign Up</a></li>
+					</ul>
+				</nav>
+			</header>
+	
+<body>
+	<br>
+    <h2><center><a href="https://goo.gl/maps/7WoSAxbDzmm">Lokasi TPA</a></center></h2>
+      <div id="map" style="height: 550px; width: 100%;">
+</div>
+<script type="text/javascript">
+    var locations = [
+            ['<center><b>PA Bukit Pinang ( Tempat Pembuangan Sampah Akhir )</b> <br> Gang Sammy Ridwan, Rapak Dalam, Loa Janan Ilir, Rapak Dalam, <br> Samarinda, Kota Samarinda, Kalimantan Timur 75242 Indonesia</center>', -0.522538, 117.1372048, 2],
+            ['<center><b>Dinas Kebersihan Dan Pertamanan Tempat Pemprosesan Akhir TPA</b> <br>Jl. Pangeran Suryanata, Bukit Pinang, Samarinda Ulu,<br> Kota Samarinda, Kalimantan Timur 75124</center>', -0.45765, 117.114686, 1]
+        ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: new google.maps.LatLng(-0.49, 117.153709),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row double">
+						<div class="6u">
+							<div class="row collapse-at-2">
+								<div class="6u">
+									<h3>Seputar Samarinda</h3>
+									<ul class="alt">
+										<li><a href="peta.html">Peta Samarinda</a></li>
+										<li><a href="lokasi.html">Lokasi Bak Sampah Sekitar</a></li>
+									</ul>
+								</div>
+								<div class="6u">
+									<h3>Seputar Website SaBer</h3>
+									<ul class="alt">
+										<li><a href="peranan.html">Peranan SaBer</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="6u">
+							<h2>Quote</h2>
+							<ul class="alt">
+										<li>"Kebersihan suatu kota berada di tangan masyarakat nya sendiri" - <i>A.T.T</i> </li>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Saber 2018. All rights reserved.</li>
+						<li>Team : <a href="tentang.html">PAGeneration</a></li>
+					</ul>
+				</div>
+			</footer>
+	</body>
+</html>
